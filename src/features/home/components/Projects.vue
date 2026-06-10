@@ -6,7 +6,6 @@ import PreviewCard from "../../projects/components/PreviewCard.vue";
 import NotchSection from "../../../components/NotchSection.vue";
 import Banner from "../../../components/Banner.vue";
 import { t } from "../../../i18n/utils/translate";
-import { isFeatureEnabled } from "../../../utils/features";
 
 import type { ProjectPreview } from "../../../content/types";
 
@@ -26,8 +25,16 @@ const loadPreviews = async () => {
 };
 
 watch(locale, loadPreviews);
-
 onMounted(loadPreviews);
+
+const highlights = [
+  { icon: "★", label: "EY Idol 2022", value: "Top 3" },
+  { icon: "◎", label: "EY Performance", value: "4.5 / 5" },
+  { icon: "◈", label: "Regional Ops", value: "VN · SG · MY · ID · PH · TH" },
+  { icon: "◉", label: "Education", value: "Hoa Sen University — GPA 3.35/4.0" },
+  { icon: "⬡", label: "Data Analytics", value: "Swiss Coding Academy" },
+  { icon: "▸", label: "Career Track", value: "EY Senior → Finance Supervisor" },
+];
 </script>
 
 <template>
@@ -43,7 +50,26 @@ onMounted(loadPreviews);
     <div class="grid">
       <div class="projects-cards">
         <PreviewCard v-for="preview in loadedPreviews" :key="preview.title" :preview="preview" />
-        <PreviewCard v-if="isFeatureEnabled('startProject')" />
+      </div>
+    </div>
+
+    <!-- Career Highlights -->
+    <div class="grid">
+      <div class="projects-highlights">
+        <h3 class="projects-highlights-title">Career Highlights</h3>
+        <div class="projects-highlights-grid">
+          <div
+            class="projects-highlight-card"
+            v-for="h in highlights"
+            :key="h.label"
+          >
+            <span class="projects-highlight-card-icon">{{ h.icon }}</span>
+            <div class="projects-highlight-card-body">
+              <p class="projects-highlight-card-label">{{ h.label }}</p>
+              <p class="projects-highlight-card-value">{{ h.value }}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -80,26 +106,16 @@ onMounted(loadPreviews);
     padding-top: var(--space-md);
     grid-column: 1 / 13;
 
-    @include mixins.mq("md") {
-      grid-column: 1 / 10;
-    }
-
-    @include mixins.mq("lg") {
-      grid-column: 3 / 8;
-    }
+    @include mixins.mq("md") { grid-column: 1 / 10; }
+    @include mixins.mq("lg") { grid-column: 3 / 8; }
 
     &-copy {
       font-weight: 900;
       letter-spacing: 0.02em;
       font-size: var(--font-size-title-md);
 
-      @include mixins.mq("sm") {
-        font-size: var(--font-size-title-lg);
-      }
-
-      @include mixins.mq("xl") {
-        font-size: var(--font-size-title-xl);
-      }
+      @include mixins.mq("sm") { font-size: var(--font-size-title-lg); }
+      @include mixins.mq("xl") { font-size: var(--font-size-title-xl); }
     }
 
     &-banner {
@@ -142,9 +158,7 @@ onMounted(loadPreviews);
     gap: var(--space-lg);
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 
-    @include mixins.mq("md") {
-      grid-column: 1 / span 12;
-    }
+    @include mixins.mq("md") { grid-column: 1 / span 12; }
 
     @include mixins.mq("lg") {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -153,6 +167,81 @@ onMounted(loadPreviews);
 
     @include mixins.mq("xl") {
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    }
+  }
+
+  // Highlights section
+  &-highlights {
+    grid-column: 1 / span 12;
+    width: 100%;
+
+    @include mixins.mq("lg") { grid-column: 3 / span 8; }
+
+    &-title {
+      font-weight: 900;
+      font-size: var(--font-size-title-xs);
+      letter-spacing: 0.04em;
+      margin-bottom: var(--space-lg);
+      opacity: 0.5;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-family: "ProFontWindows", monospace;
+    }
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: var(--space-md);
+
+      @include mixins.mq("md") {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
+  &-highlight-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.5);
+    transition: background 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+      border-color: rgba(0, 0, 0, 0.14);
+    }
+
+    &-icon {
+      font-size: 18px;
+      line-height: 1;
+      opacity: 0.4;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    &-label {
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      opacity: 0.5;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 10px;
+      font-family: "ProFontWindows", monospace;
+    }
+
+    &-value {
+      font-size: var(--font-size-md);
+      font-weight: 600;
+      line-height: 1.3;
     }
   }
 }
