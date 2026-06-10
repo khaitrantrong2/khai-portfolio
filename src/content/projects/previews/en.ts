@@ -11,19 +11,19 @@ export default [
     title: "Claimback Review Cockpit",
     slug: "claimback-cockpit",
     thumbnail: thumbnailClaimbackCockpit,
-    description: "Cross-country claimback review system",
+    description: "Cross-country claimback review & control system",
   },
   {
     title: "GL Analysis Engine",
     slug: "gl-analysis",
     thumbnail: thumbnailGlAnalysis,
-    description: "Python-based GL review automation",
+    description: "Python + DuckDB GL anomaly detection engine",
   },
   {
     title: "Claimback Master Tracker",
     slug: "claimback-tracker",
     thumbnail: thumbnailClaimbackTracker,
-    description: "Regional claimback data model",
+    description: "Regional claimback data model — 6 countries",
   },
   {
     title: "AR Monitoring Dashboard",
@@ -35,6 +35,6 @@ export default [
     title: "Finance Data Architecture",
     slug: "data-architecture",
     thumbnail: thumbnailDataArchitecture,
-    description: "Scalable finance data exploration",
+    description: "BigQuery + DuckDB finance data prototype",
   },
 ] as const satisfies ProjectPreview[];
