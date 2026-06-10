@@ -22,13 +22,9 @@ watchEffect((onInvalidate) => {
   const wrapperEl = wrapperRef.value;
   if (!wrapperEl) return;
 
-  if (matchMedia) {
-    matchMedia.revert();
-    matchMedia = null;
-  }
+  if (matchMedia) { matchMedia.revert(); matchMedia = null; }
 
   matchMedia = gsap.matchMedia();
-
   matchMedia.add(
     {
       isMobile: `(max-width: ${BREAKPOINTS.md - 1}px)`,
@@ -38,18 +34,10 @@ watchEffect((onInvalidate) => {
     (context) => {
       const { conditions } = context;
       const { isLandscape } = conditions as { isMobile: boolean; isDesktop: boolean; isLandscape: boolean };
-
-      const tl = gsap.timeline({
-        paused: true,
-      });
+      const tl = gsap.timeline({ paused: true });
 
       if (isLandscape) {
-        tl.fromTo(
-          wrapperEl,
-          { clipPath: "inset(0% 0% 0% 100%)" },
-          { clipPath: "inset(0% 0% 0% 0%)", duration: 0.3, ease: "none" },
-          0,
-        );
+        tl.fromTo(wrapperEl, { clipPath: "inset(0% 0% 0% 100%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.3, ease: "none" }, 0);
       } else {
         gsap.set(wrapperEl, { clipPath: "inset(0% 0% 0% 0%)" });
       }
@@ -58,37 +46,22 @@ watchEffect((onInvalidate) => {
         for (let i = 0; i < timelines.value.length; i++) {
           const item = timelines.value[i];
           if (!item) continue;
-          tl.add(() => {
-            item.timeline.restart(true);
-          }, item.delay + 0.25);
+          tl.add(() => { item.timeline.restart(true); }, item.delay + 0.25);
         }
       }
 
       emit("timeline:created", tl);
-
-      return () => {
-        tl.kill();
-      };
+      return () => { tl.kill(); };
     },
   );
 
-  onInvalidate(() => {
-    if (matchMedia) {
-      matchMedia.revert();
-      matchMedia = null;
-    }
-  });
+  onInvalidate(() => { if (matchMedia) { matchMedia.revert(); matchMedia = null; } });
 });
 
-onBeforeUnmount(() => {
-  if (matchMedia) {
-    matchMedia.revert();
-  }
-});
+onBeforeUnmount(() => { if (matchMedia) { matchMedia.revert(); } });
 
 const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
-  const updatedTimelines = [...timelines.value, { timeline, delay }];
-  timelines.value = updatedTimelines;
+  timelines.value = [...timelines.value, { timeline, delay }];
 };
 </script>
 
@@ -98,7 +71,7 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
       <div class="box-details-content">
         <div class="box-details-title">
           <AppearingText
-            text="Khai"
+            text="Khai Tran"
             :steps="1"
             :duration="0.35"
             @timeline:created="(tl: gsap.core.Timeline) => handleTimelineCreated(tl, 0)"
@@ -115,6 +88,14 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
               :duration="0.35"
               @timeline:created="(tl: gsap.core.Timeline) => handleTimelineCreated(tl, 0.1)"
             />
+          </div>
+          <div class="box-details-item box-details-item--role">
+            <span class="box-details-dot"></span>
+            <span class="box-details-content-copy">Finance Supervisor</span>
+          </div>
+          <div class="box-details-item box-details-item--role">
+            <span class="box-details-dot"></span>
+            <span class="box-details-content-copy">Former EY Senior</span>
           </div>
         </div>
       </div>
@@ -133,22 +114,16 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     position: absolute;
     padding-bottom: 3px;
     padding-right: var(--line-length);
-    width: 240px;
+    width: 260px;
     max-width: calc(var(--svw) * 30);
     transform: translate(-100%, -50%);
   }
 
-  @include mixins.landscape-large {
-    width: 240px;
-  }
+  @include mixins.landscape-large { width: 260px; }
 
-  &::after,
-  &::before {
+  &::after, &::before {
     display: none;
-
-    @include mixins.landscape {
-      display: block;
-    }
+    @include mixins.landscape { display: block; }
   }
 
   &::after {
@@ -180,19 +155,11 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     background: linear-gradient(to bottom, var(--color-hologram-top) 0%, var(--color-hologram-bottom) 100%);
     gap: var(--space-xxs);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: var(--space-sm) var(--space-md);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--space-xs) var(--space-sm);
 
-    @include mixins.landscape {
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: var(--space-xs) var(--space-sm);
-    }
-
-    @include mixins.mq("md") {
-      padding: var(--space-sm) var(--space-md);
-    }
+    @include mixins.mq("md") { padding: var(--space-sm) var(--space-md); }
   }
 
   &-item {
@@ -201,40 +168,41 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     gap: var(--space-xs);
     flex-direction: row;
     white-space: nowrap;
-    height: var(--icon-size-sm);
+    min-height: var(--icon-size-sm);
+
+    &--role {
+      min-height: auto;
+      gap: 6px;
+    }
+  }
+
+  &-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--color-cyan-400);
+    flex-shrink: 0;
   }
 
   &-icon {
     width: var(--icon-size-xxs);
     transform: translateY(-1px);
     --icon-color: var(--color-white-400);
-
-    @include mixins.mq("md") {
-      width: var(--icon-size-xs);
-    }
+    @include mixins.mq("md") { width: var(--icon-size-xs); }
   }
 
   &-title {
     font-size: var(--font-size-title-xxs);
     font-weight: 700;
-
-    @include mixins.mq("md") {
-      font-size: var(--font-size-title-sm);
-    }
+    @include mixins.mq("md") { font-size: var(--font-size-title-sm); }
   }
 
   &-items {
     display: flex;
     font-size: var(--font-size-sm);
     flex-direction: column;
-
-    @include mixins.mq("md") {
-      font-size: var(--font-size-md);
-    }
-
-    &-copy {
-      flex: 0.5;
-    }
+    gap: 2px;
+    @include mixins.mq("md") { font-size: var(--font-size-md); }
   }
 }
 </style>
