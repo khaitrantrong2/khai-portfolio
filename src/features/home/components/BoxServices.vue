@@ -23,13 +23,9 @@ watchEffect((onInvalidate) => {
   const wrapperEl = wrapperRef.value;
   if (!wrapperEl) return;
 
-  if (matchMedia) {
-    matchMedia.revert();
-    matchMedia = null;
-  }
+  if (matchMedia) { matchMedia.revert(); matchMedia = null; }
 
   matchMedia = gsap.matchMedia();
-
   matchMedia.add(
     {
       isMobile: `(max-width: ${BREAKPOINTS.md - 1}px)`,
@@ -38,18 +34,10 @@ watchEffect((onInvalidate) => {
     (context) => {
       const { conditions } = context;
       const { isMobile } = conditions as { isMobile: boolean; isDesktop: boolean };
-
-      const tl = gsap.timeline({
-        paused: true,
-      });
+      const tl = gsap.timeline({ paused: true });
 
       if (!isMobile) {
-        tl.fromTo(
-          wrapperEl,
-          { clipPath: "inset(0% 100% 0% 0%)" },
-          { clipPath: "inset(0% 0% 0% 0%)", duration: 0.4, ease: "none" },
-          0,
-        );
+        tl.fromTo(wrapperEl, { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.4, ease: "none" }, 0);
       } else {
         gsap.set(wrapperEl, { clipPath: "inset(0% 0% 0% 0%)" });
       }
@@ -57,64 +45,45 @@ watchEffect((onInvalidate) => {
       for (let i = 0; i < timelines.value.length; i++) {
         const item = timelines.value[i];
         if (!item) continue;
-        tl.add(() => {
-          item.timeline.restart(true);
-        }, item.delay + 0.25);
+        tl.add(() => { item.timeline.restart(true); }, item.delay + 0.25);
       }
 
       if (!isMobile && subRefs.value.length > 0) {
-        const subItems = subRefs.value.filter((ref) => ref !== null && ref !== undefined);
-        if (subItems.length > 0) {
-          tl.fromTo(subItems, { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: 0.1 }, 0.3);
-        }
+        const subItems = subRefs.value.filter(Boolean);
+        if (subItems.length > 0) tl.fromTo(subItems, { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: 0.1 }, 0.3);
       } else if (isMobile && subRefs.value.length > 0) {
-        const subItems = subRefs.value.filter((ref) => ref !== null && ref !== undefined);
-        if (subItems.length > 0) {
-          gsap.set(subItems, { opacity: 1 });
-        }
+        const subItems = subRefs.value.filter(Boolean);
+        if (subItems.length > 0) gsap.set(subItems, { opacity: 1 });
       }
 
       emit("timeline:created", tl);
-
-      return () => {
-        tl.kill();
-      };
+      return () => { tl.kill(); };
     },
   );
 
-  onInvalidate(() => {
-    if (matchMedia) {
-      matchMedia.revert();
-      matchMedia = null;
-    }
-  });
+  onInvalidate(() => { if (matchMedia) { matchMedia.revert(); matchMedia = null; } });
 });
 
-onBeforeUnmount(() => {
-  if (matchMedia) {
-    matchMedia.revert();
-  }
-});
+onBeforeUnmount(() => { if (matchMedia) { matchMedia.revert(); } });
 
 const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
-  const updatedTimelines = [...timelines.value, { timeline, delay }];
-  timelines.value = updatedTimelines;
+  timelines.value = [...timelines.value, { timeline, delay }];
 };
 
 const SERVICES_EN = [
-  { name: "Finance Transformation" },
-  { name: "Python & DuckDB" },
-  { name: "Power BI & SQL" },
-  { name: "NetSuite & GL Review" },
-  { name: "AR & Working Capital" },
+  { name: "Claimback & AR Controls" },
+  { name: "GL Review & Analytics" },
+  { name: "Finance Automation" },
+  { name: "Python · DuckDB · BigQuery" },
+  { name: "Power BI · NetSuite · SQL" },
 ] as const satisfies { name: string }[];
 
 const SERVICES_VI = [
-  { name: "Chuyển đổi Tài chính" },
-  { name: "Python & DuckDB" },
-  { name: "Power BI & SQL" },
-  { name: "NetSuite & GL Review" },
-  { name: "AR & Vốn lưu động" },
+  { name: "Claimback & AR Controls" },
+  { name: "GL Review & Analytics" },
+  { name: "Tự động hóa tài chính" },
+  { name: "Python · DuckDB · BigQuery" },
+  { name: "Power BI · NetSuite · SQL" },
 ] as const satisfies { name: string }[];
 
 const services = computed(() => {
@@ -176,13 +145,9 @@ const services = computed(() => {
     max-width: calc(var(--svw) * 36);
   }
 
-  &::after,
-  &::before {
+  &::after, &::before {
     display: none;
-
-    @include mixins.landscape {
-      display: block;
-    }
+    @include mixins.landscape { display: block; }
   }
 
   &::after {
@@ -205,10 +170,7 @@ const services = computed(() => {
     left: 0;
     height: 0;
     border-top: var(--stroke-sm) solid var(--color-cyan-400);
-
-    @include mixins.landscape {
-      width: var(--line-length);
-    }
+    @include mixins.landscape { width: var(--line-length); }
   }
 
   &-content {
@@ -220,13 +182,8 @@ const services = computed(() => {
     gap: var(--space-sm);
     padding: var(--space-sm) var(--space-md);
 
-    @include mixins.landscape {
-      padding: var(--space-xs) var(--space-sm);
-    }
-
-    @include mixins.mq("md") {
-      padding: var(--space-sm) var(--space-md);
-    }
+    @include mixins.landscape { padding: var(--space-xs) var(--space-sm); }
+    @include mixins.mq("md") { padding: var(--space-sm) var(--space-md); }
   }
 
   &-list {
@@ -253,14 +210,8 @@ const services = computed(() => {
 
       &-name {
         font-size: var(--font-size-md);
-
-        @include mixins.landscape {
-          font-size: var(--font-size-sm);
-        }
-
-        @include mixins.landscape-large {
-          font-size: var(--font-size-lg);
-        }
+        @include mixins.landscape { font-size: var(--font-size-sm); }
+        @include mixins.landscape-large { font-size: var(--font-size-lg); }
       }
     }
   }
@@ -268,14 +219,8 @@ const services = computed(() => {
   &-title {
     font-size: var(--font-size-title-xs);
     font-weight: 700;
-
-    @include mixins.landscape {
-      font-size: var(--font-size-title-xxs);
-    }
-
-    @include mixins.landscape-large {
-      font-size: var(--font-size-title-xs);
-    }
+    @include mixins.landscape { font-size: var(--font-size-title-xxs); }
+    @include mixins.landscape-large { font-size: var(--font-size-title-xs); }
   }
 }
 </style>
