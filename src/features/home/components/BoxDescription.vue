@@ -22,13 +22,9 @@ watchEffect((onInvalidate) => {
   const wrapperEl = wrapperRef.value;
   if (!wrapperEl) return;
 
-  if (matchMedia) {
-    matchMedia.revert();
-    matchMedia = null;
-  }
+  if (matchMedia) { matchMedia.revert(); matchMedia = null; }
 
   matchMedia = gsap.matchMedia();
-
   matchMedia.add(
     {
       isMobile: `(max-width: ${BREAKPOINTS.md - 1}px)`,
@@ -37,18 +33,10 @@ watchEffect((onInvalidate) => {
     (context) => {
       const { conditions } = context;
       const { isMobile } = conditions as { isMobile: boolean; isDesktop: boolean };
-
-      const tl = gsap.timeline({
-        paused: true,
-      });
+      const tl = gsap.timeline({ paused: true });
 
       if (!isMobile) {
-        tl.fromTo(
-          wrapperEl,
-          { clipPath: "inset(0% 0% 0% 100%)" },
-          { clipPath: "inset(0% 0% 0% 0%)", duration: 0.3, ease: "none" },
-          0,
-        );
+        tl.fromTo(wrapperEl, { clipPath: "inset(0% 0% 0% 100%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.3, ease: "none" }, 0);
       } else {
         gsap.set(wrapperEl, { clipPath: "inset(0% 0% 0% 0%)" });
       }
@@ -56,36 +44,21 @@ watchEffect((onInvalidate) => {
       for (let i = 0; i < timelines.value.length; i++) {
         const item = timelines.value[i];
         if (!item) continue;
-        tl.add(() => {
-          item.timeline.restart(true);
-        }, item.delay + 0.15);
+        tl.add(() => { item.timeline.restart(true); }, item.delay + 0.15);
       }
 
       emit("timeline:created", tl);
-
-      return () => {
-        tl.kill();
-      };
+      return () => { tl.kill(); };
     },
   );
 
-  onInvalidate(() => {
-    if (matchMedia) {
-      matchMedia.revert();
-      matchMedia = null;
-    }
-  });
+  onInvalidate(() => { if (matchMedia) { matchMedia.revert(); matchMedia = null; } });
 });
 
-onBeforeUnmount(() => {
-  if (matchMedia) {
-    matchMedia.revert();
-  }
-});
+onBeforeUnmount(() => { if (matchMedia) { matchMedia.revert(); } });
 
 const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
-  const updatedTimelines = [...timelines.value, { timeline, delay }];
-  timelines.value = updatedTimelines;
+  timelines.value = [...timelines.value, { timeline, delay }];
 };
 </script>
 
@@ -94,7 +67,7 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     <div ref="wrapperRef" class="box-description">
       <div class="box-description-content">
         <div class="box-description-details">
-          <p class="box-description-details-name">Khai</p>
+          <p class="box-description-details-name">Khai Tran</p>
           <div class="box-description-details-location">
             <PinIcon class="box-description-details-location-icon" />
             <p class="box-description-details-location-copy">{{ t("location") }}</p>
@@ -108,6 +81,10 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
             :duration="0.7"
             @timeline:created="(tl: gsap.core.Timeline) => handleTimelineCreated(tl, 0)"
           />
+        </div>
+        <div class="box-description-meta">
+          <span class="box-description-tag">Former EY Senior</span>
+          <span class="box-description-tag">Finance Supervisor</span>
         </div>
       </div>
     </div>
@@ -136,7 +113,7 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
   }
 
   @include mixins.landscape-large {
-    width: 410px;
+    width: 420px;
     max-width: calc(var(--svw) * 32);
   }
 
@@ -144,10 +121,7 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     width: 100%;
     height: 1px;
     background-color: var(--color-cyan-400);
-
-    @include mixins.landscape {
-      display: none;
-    }
+    @include mixins.landscape { display: none; }
   }
 
   &-details {
@@ -155,10 +129,7 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    @include mixins.landscape {
-      display: none;
-    }
+    @include mixins.landscape { display: none; }
 
     &-name {
       font-size: var(--font-size-title-xs);
@@ -176,19 +147,13 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
         transform: translateY(-1px);
       }
 
-      &-copy {
-        font-size: var(--font-size-md);
-      }
+      &-copy { font-size: var(--font-size-md); }
     }
   }
 
-  &::after,
-  &::before {
+  &::after, &::before {
     display: none;
-
-    @include mixins.landscape {
-      display: block;
-    }
+    @include mixins.landscape { display: block; }
   }
 
   &::after {
@@ -221,10 +186,7 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
 
     @include mixins.landscape {
       padding: var(--space-xs) var(--space-sm);
-
-      @include mixins.mq("md") {
-        padding: var(--space-sm) var(--space-md);
-      }
+      @include mixins.mq("md") { padding: var(--space-sm) var(--space-md); }
     }
   }
 
@@ -238,9 +200,28 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
       font-size: var(--font-size-sm);
     }
 
-    @include mixins.landscape-large {
-      font-size: var(--font-size-lg);
+    @include mixins.landscape-large { font-size: var(--font-size-lg); }
+  }
+
+  &-meta {
+    display: none;
+    @include mixins.landscape {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      padding-top: var(--space-xs);
     }
+  }
+
+  &-tag {
+    font-family: "ProFontWindows", monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid var(--color-cyan-400);
+    color: var(--color-text-cyan-400);
+    background: rgba(77, 217, 192, 0.06);
+    white-space: nowrap;
   }
 }
 </style>
