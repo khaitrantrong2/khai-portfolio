@@ -1,7 +1,7 @@
 {
   "about": "Về tôi",
-  "about-intro": "Chuyên gia chuyển đổi tài chính kết hợp kiến thức kế toán, thiết kế quy trình, tự động hóa và phân tích dữ liệu.<br />Tôi xây dựng các công cụ thực tiễn giúp giảm công việc thủ công, cải thiện kiểm soát tài chính và hỗ trợ đội nhóm đánh giá các nghiệp vụ tài chính phức tạp hiệu quả hơn.",
-  "about-tagline": "Chuyển đổi các quy trình tài chính phức tạp thành hệ thống có thể mở rộng, tự động hóa và dễ kiểm soát.",
+  "about-intro": "Finance Supervisor phụ trách Claimback, AR, Value Protection và kiểm soát tài chính. Cựu EY Senior với ~4 năm kinh nghiệm kiểm toán. Tôi biến các quy trình tài chính phức tạp thành hệ thống có thể mở rộng, tự động hóa và dễ kiểm soát.",
+  "about-tagline": "Biến quy trình tài chính phức tạp thành hệ thống có thể mở rộng, tự động hóa và dễ kiểm soát.",
   "back-to-home": "Về trang chủ",
   "original-concept-by": "Thiết kế gốc bởi",
   "contact": "Liên hệ",
@@ -11,7 +11,8 @@
   "location": "Việt Nam",
   "get-in-touch": "Liên hệ",
   "go-to": "Đi đến",
-  "job-title": "Chuyển đổi & Tự động hóa Tài chính",
+  "job-title": "Finance Supervisor | Claimback, AR & Tự động hóa",
+  "job-title-short": "Chuyển đổi & Tự động hóa Tài chính",
   "lets-work-together": "Hãy cùng<br/>hợp tác!",
   "legal": "Thông tin pháp lý",
   "live-view": "Xem trực tiếp",
@@ -25,5 +26,7 @@
   "source-code": "Mã nguồn",
   "switch-to-project": "Chuyển đến dự án {project}",
   "version": "Phiên bản",
-  "view-project": "Xem dự án"
+  "view-project": "Xem dự án",
+  "open-to": "Phù hợp với",
+  "highlights": "Thành tích"
 }
