@@ -1,7 +1,7 @@
 {
   "about": "About",
-  "about-intro": "Finance transformation professional combining accounting knowledge, process design, automation, and data analytics.<br />I build practical tools that reduce manual work, improve financial controls, and help teams review complex finance operations more effectively.",
-  "about-tagline": "Transforms complex finance operations into scalable, automated, and review-friendly systems.",
+  "about-intro": "Finance Supervisor focused on Claimback, AR, Value Protection, and finance controls. Former EY Senior with ~4 years of audit experience. I turn complex finance operations into scalable, automated, and review-friendly systems.",
+  "about-tagline": "I turn complex finance operations into scalable, automated, and review-friendly systems.",
   "back-to-home": "Back to home",
   "original-concept-by": "Originally created by",
   "contact": "Contact",
@@ -11,7 +11,8 @@
   "location": "Vietnam",
   "get-in-touch": "Get in touch",
   "go-to": "Go to",
-  "job-title": "Finance Transformation & Automation",
+  "job-title": "Finance Supervisor | Claimback, AR & Automation",
+  "job-title-short": "Finance Transformation & Automation",
   "lets-work-together": "Let's work<br/>together!",
   "legal": "Legal Notice",
   "live-view": "Live View",
@@ -25,5 +26,7 @@
   "source-code": "Source Code",
   "switch-to-project": "Switch to project {project}",
   "version": "Version",
-  "view-project": "View project"
+  "view-project": "View project",
+  "open-to": "Open to",
+  "highlights": "Highlights"
 }
