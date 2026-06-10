@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0f172a"/>
+  <rect x="40" y="40" width="720" height="420" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="40" y="40" width="720" height="52" rx="12" fill="#1e40af"/>
+  <rect x="40" y="68" width="720" height="24" fill="#1e40af"/>
+  <text x="72" y="72" font-family="monospace" font-size="14" fill="#bfdbfe" font-weight="bold">GL ANALYSIS ENGINE</text>
+  <text x="620" y="72" font-family="monospace" font-size="11" fill="#bfdbfe">Python + DuckDB</text>
+  <!-- Pipeline diagram -->
+  <rect x="60" y="120" width="120" height="40" rx="6" fill="#1e40af" opacity="0.6"/>
+  <text x="90" y="143" font-family="monospace" font-size="10" fill="#bfdbfe">GL Export</text>
+  <line x1="182" y1="140" x2="220" y2="140" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4"/>
+  <polygon points="220,135 232,140 220,145" fill="#60a5fa"/>
+  <rect x="234" y="120" width="120" height="40" rx="6" fill="#1e40af" opacity="0.6"/>
+  <text x="258" y="143" font-family="monospace" font-size="10" fill="#bfdbfe">DuckDB Parse</text>
+  <line x1="356" y1="140" x2="394" y2="140" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4"/>
+  <polygon points="394,135 406,140 394,145" fill="#60a5fa"/>
+  <rect x="408" y="120" width="120" height="40" rx="6" fill="#1e40af" opacity="0.6"/>
+  <text x="432" y="143" font-family="monospace" font-size="10" fill="#bfdbfe">Rule Engine</text>
+  <line x1="530" y1="140" x2="568" y2="140" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4"/>
+  <polygon points="568,135 580,140 568,145" fill="#60a5fa"/>
+  <rect x="582" y="120" width="120" height="40" rx="6" fill="#ef4444" opacity="0.5"/>
+  <text x="605" y="143" font-family="monospace" font-size="10" fill="#fca5a5">Issue Flags</text>
+  <!-- Issue categories -->
+  <text x="60" y="196" font-family="monospace" font-size="10" fill="#60a5fa">REVIEW CATEGORIES</text>
+  <rect x="60" y="206" width="200" height="30" rx="5" fill="#ef4444" opacity="0.15" stroke="#ef4444" stroke-width="0.5"/>
+  <text x="76" y="225" font-family="monospace" font-size="10" fill="#fca5a5">⚠ Missing Reversals</text>
+  <rect x="272" y="206" width="200" height="30" rx="5" fill="#ef4444" opacity="0.15" stroke="#ef4444" stroke-width="0.5"/>
+  <text x="288" y="225" font-family="monospace" font-size="10" fill="#fca5a5">⚠ Incorrect Accounts</text>
+  <rect x="484" y="206" width="200" height="30" rx="5" fill="#fbbf24" opacity="0.15" stroke="#fbbf24" stroke-width="0.5"/>
+  <text x="500" y="225" font-family="monospace" font-size="10" fill="#fcd34d">⚠ Accrual Mismatch</text>
+  <rect x="60" y="244" width="200" height="30" rx="5" fill="#fbbf24" opacity="0.15" stroke="#fbbf24" stroke-width="0.5"/>
+  <text x="76" y="263" font-family="monospace" font-size="10" fill="#fcd34d">⚠ Wrong Activity Period</text>
+  <rect x="272" y="244" width="200" height="30" rx="5" fill="#fbbf24" opacity="0.15" stroke="#fbbf24" stroke-width="0.5"/>
+  <text x="288" y="263" font-family="monospace" font-size="10" fill="#fcd34d">⚠ Incorrect Classes</text>
+  <rect x="484" y="244" width="200" height="30" rx="5" fill="#22c55e" opacity="0.15" stroke="#22c55e" stroke-width="0.5"/>
+  <text x="500" y="263" font-family="monospace" font-size="10" fill="#86efac">✓ Journal Anomalies</text>
+  <!-- Code snippet -->
+  <rect x="60" y="294" width="680" height="140" rx="8" fill="#0f172a"/>
+  <text x="76" y="314" font-family="monospace" font-size="11" fill="#60a5fa">import duckdb</text>
+  <text x="76" y="330" font-family="monospace" font-size="11" fill="#7dd3fc">con = duckdb.connect()</text>
+  <text x="76" y="346" font-family="monospace" font-size="11" fill="#86efac">issues = con.execute(</text>
+  <text x="100" y="362" font-family="monospace" font-size="11" fill="#fbbf24">  "SELECT * FROM gl_entries WHERE accrual_reversal_flag = 1"</text>
+  <text x="76" y="378" font-family="monospace" font-size="11" fill="#86efac">).df()</text>
+  <text x="60" y="436" font-family="monospace" font-size="9" fill="#60a5fa" opacity="0.6">* Visuals use recreated/anonymized data to protect confidential business information.</text>
+</svg>

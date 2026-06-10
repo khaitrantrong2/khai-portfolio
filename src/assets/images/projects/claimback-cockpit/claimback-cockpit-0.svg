@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#1a1a2e"/>
+  <rect x="40" y="40" width="720" height="420" rx="12" fill="#16213e" stroke="#0f4c75" stroke-width="1.5"/>
+  <!-- Header bar -->
+  <rect x="40" y="40" width="720" height="52" rx="12" fill="#0f4c75"/>
+  <rect x="40" y="68" width="720" height="24" fill="#0f4c75"/>
+  <text x="72" y="72" font-family="monospace" font-size="14" fill="#7ec8e3" font-weight="bold">CLAIMBACK REVIEW COCKPIT</text>
+  <circle cx="712" cy="66" r="8" fill="#00d4aa"/>
+  <circle cx="732" cy="66" r="8" fill="#ffd166"/>
+  <!-- KPI Cards -->
+  <rect x="60" y="114" width="155" height="76" rx="8" fill="#0a2a4a" stroke="#0f4c75" stroke-width="1"/>
+  <text x="80" y="136" font-family="monospace" font-size="10" fill="#7ec8e3">TOTAL CLAIMS</text>
+  <text x="80" y="162" font-family="monospace" font-size="22" fill="#ffffff" font-weight="bold">1,248</text>
+  <rect x="228" y="114" width="155" height="76" rx="8" fill="#0a2a4a" stroke="#0f4c75" stroke-width="1"/>
+  <text x="248" y="136" font-family="monospace" font-size="10" fill="#7ec8e3">PENDING REVIEW</text>
+  <text x="248" y="162" font-family="monospace" font-size="22" fill="#ffd166" font-weight="bold">87</text>
+  <rect x="396" y="114" width="155" height="76" rx="8" fill="#0a2a4a" stroke="#0f4c75" stroke-width="1"/>
+  <text x="416" y="136" font-family="monospace" font-size="10" fill="#7ec8e3">EXCEPTIONS</text>
+  <text x="416" y="162" font-family="monospace" font-size="22" fill="#ef4444" font-weight="bold">23</text>
+  <rect x="564" y="114" width="156" height="76" rx="8" fill="#0a2a4a" stroke="#0f4c75" stroke-width="1"/>
+  <text x="584" y="136" font-family="monospace" font-size="10" fill="#7ec8e3">SETTLED</text>
+  <text x="584" y="162" font-family="monospace" font-size="22" fill="#00d4aa" font-weight="bold">1,138</text>
+  <!-- Country flags row -->
+  <text x="60" y="218" font-family="monospace" font-size="10" fill="#7ec8e3">COUNTRIES</text>
+  <rect x="60" y="226" width="42" height="20" rx="4" fill="#1e3a5f"/>
+  <text x="68" y="240" font-family="monospace" font-size="10" fill="#ffffff">VN</text>
+  <rect x="110" y="226" width="42" height="20" rx="4" fill="#1e3a5f"/>
+  <text x="118" y="240" font-family="monospace" font-size="10" fill="#ffffff">SG</text>
+  <rect x="160" y="226" width="42" height="20" rx="4" fill="#1e3a5f"/>
+  <text x="168" y="240" font-family="monospace" font-size="10" fill="#ffffff">MY</text>
+  <rect x="210" y="226" width="42" height="20" rx="4" fill="#1e3a5f"/>
+  <text x="218" y="240" font-family="monospace" font-size="10" fill="#ffffff">ID</text>
+  <rect x="260" y="226" width="42" height="20" rx="4" fill="#1e3a5f"/>
+  <text x="268" y="240" font-family="monospace" font-size="10" fill="#ffffff">PH</text>
+  <rect x="310" y="226" width="42" height="20" rx="4" fill="#1e3a5f"/>
+  <text x="318" y="240" font-family="monospace" font-size="10" fill="#ffffff">TH</text>
+  <!-- Table -->
+  <rect x="60" y="264" width="680" height="28" rx="4" fill="#0f4c75" opacity="0.5"/>
+  <text x="76" y="282" font-family="monospace" font-size="10" fill="#7ec8e3">BRAND</text>
+  <text x="186" y="282" font-family="monospace" font-size="10" fill="#7ec8e3">PERIOD</text>
+  <text x="286" y="282" font-family="monospace" font-size="10" fill="#7ec8e3">ACCRUAL</text>
+  <text x="386" y="282" font-family="monospace" font-size="10" fill="#7ec8e3">INVOICE</text>
+  <text x="486" y="282" font-family="monospace" font-size="10" fill="#7ec8e3">STATUS</text>
+  <text x="600" y="282" font-family="monospace" font-size="10" fill="#7ec8e3">FLAG</text>
+  <!-- Rows -->
+  <rect x="60" y="294" width="680" height="24" rx="2" fill="#0a2a4a"/>
+  <text x="76" y="310" font-family="monospace" font-size="10" fill="#ffffff">Brand A - VN</text>
+  <text x="186" y="310" font-family="monospace" font-size="10" fill="#ffffff">Jun 2025</text>
+  <text x="286" y="310" font-family="monospace" font-size="10" fill="#ffffff">120,000</text>
+  <text x="386" y="310" font-family="monospace" font-size="10" fill="#ffffff">118,500</text>
+  <rect x="484" y="298" width="60" height="16" rx="4" fill="#00d4aa" opacity="0.2"/>
+  <text x="495" y="310" font-family="monospace" font-size="10" fill="#00d4aa">Settled</text>
+  <rect x="60" y="320" width="680" height="24" rx="2" fill="#1a1a2e"/>
+  <text x="76" y="336" font-family="monospace" font-size="10" fill="#ffffff">Brand B - SG</text>
+  <text x="186" y="336" font-family="monospace" font-size="10" fill="#ffffff">Jun 2025</text>
+  <text x="286" y="336" font-family="monospace" font-size="10" fill="#ffffff">85,000</text>
+  <text x="386" y="336" font-family="monospace" font-size="10" fill="#ffd166">—</text>
+  <rect x="484" y="324" width="74" height="16" rx="4" fill="#ef4444" opacity="0.2"/>
+  <text x="491" y="336" font-family="monospace" font-size="10" fill="#ef4444">Missing Inv.</text>
+  <circle cx="618" cy="328" r="5" fill="#ef4444"/>
+  <rect x="60" y="346" width="680" height="24" rx="2" fill="#0a2a4a"/>
+  <text x="76" y="362" font-family="monospace" font-size="10" fill="#ffffff">Brand C - MY</text>
+  <text x="186" y="362" font-family="monospace" font-size="10" fill="#ffffff">May 2025</text>
+  <text x="286" y="362" font-family="monospace" font-size="10" fill="#ffffff">200,000</text>
+  <text x="386" y="362" font-family="monospace" font-size="10" fill="#ffffff">200,000</text>
+  <rect x="484" y="350" width="60" height="16" rx="4" fill="#ffd166" opacity="0.2"/>
+  <text x="492" y="362" font-family="monospace" font-size="10" fill="#ffd166">Pending</text>
+  <rect x="60" y="372" width="680" height="24" rx="2" fill="#1a1a2e"/>
+  <text x="76" y="388" font-family="monospace" font-size="10" fill="#ffffff">Brand D - TH</text>
+  <text x="186" y="388" font-family="monospace" font-size="10" fill="#ffffff">Jun 2025</text>
+  <text x="286" y="388" font-family="monospace" font-size="10" fill="#ffffff">55,000</text>
+  <text x="386" y="388" font-family="monospace" font-size="10" fill="#ef4444">—</text>
+  <rect x="484" y="376" width="76" height="16" rx="4" fill="#ef4444" opacity="0.2"/>
+  <text x="490" y="388" font-family="monospace" font-size="10" fill="#ef4444">Rev. Mismatch</text>
+  <circle cx="618" cy="380" r="5" fill="#ef4444"/>
+  <!-- Footer note -->
+  <text x="60" y="442" font-family="monospace" font-size="9" fill="#7ec8e3" opacity="0.6">* Visuals use recreated/anonymized data to protect confidential business information.</text>
+</svg>

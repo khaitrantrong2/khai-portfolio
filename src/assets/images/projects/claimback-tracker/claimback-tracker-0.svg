@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0a1628"/>
+  <rect x="40" y="40" width="720" height="420" rx="12" fill="#0d1f3c" stroke="#1e3a5f" stroke-width="1.5"/>
+  <rect x="40" y="40" width="720" height="52" rx="12" fill="#1a3a6c"/>
+  <rect x="40" y="68" width="720" height="24" fill="#1a3a6c"/>
+  <text x="72" y="72" font-family="monospace" font-size="14" fill="#93c5fd" font-weight="bold">CLAIMBACK MASTER TRACKER — REGIONAL</text>
+  <!-- Region map placeholders -->
+  <text x="72" y="118" font-family="monospace" font-size="10" fill="#93c5fd">6 COUNTRIES IN SCOPE</text>
+  <rect x="72" y="126" width="90" height="32" rx="6" fill="#1a3a6c"/>
+  <text x="100" y="147" font-family="monospace" font-size="11" fill="#ffffff">🇻🇳 VN</text>
+  <rect x="172" y="126" width="90" height="32" rx="6" fill="#1a3a6c"/>
+  <text x="200" y="147" font-family="monospace" font-size="11" fill="#ffffff">🇸🇬 SG</text>
+  <rect x="272" y="126" width="90" height="32" rx="6" fill="#1a3a6c"/>
+  <text x="300" y="147" font-family="monospace" font-size="11" fill="#ffffff">🇲🇾 MY</text>
+  <rect x="372" y="126" width="90" height="32" rx="6" fill="#1a3a6c"/>
+  <text x="400" y="147" font-family="monospace" font-size="11" fill="#ffffff">🇮🇩 ID</text>
+  <rect x="472" y="126" width="90" height="32" rx="6" fill="#1a3a6c"/>
+  <text x="500" y="147" font-family="monospace" font-size="11" fill="#ffffff">🇵🇭 PH</text>
+  <rect x="572" y="126" width="90" height="32" rx="6" fill="#1a3a6c"/>
+  <text x="600" y="147" font-family="monospace" font-size="11" fill="#ffffff">🇹🇭 TH</text>
+  <!-- Tracking table -->
+  <rect x="60" y="178" width="680" height="28" rx="4" fill="#1a3a6c"/>
+  <text x="72" y="196" font-family="monospace" font-size="9" fill="#93c5fd">BRAND</text>
+  <text x="152" y="196" font-family="monospace" font-size="9" fill="#93c5fd">CTY</text>
+  <text x="196" y="196" font-family="monospace" font-size="9" fill="#93c5fd">PLATFORM</text>
+  <text x="276" y="196" font-family="monospace" font-size="9" fill="#93c5fd">PERIOD</text>
+  <text x="356" y="196" font-family="monospace" font-size="9" fill="#93c5fd">ACCRUAL</text>
+  <text x="436" y="196" font-family="monospace" font-size="9" fill="#93c5fd">INVOICE</text>
+  <text x="516" y="196" font-family="monospace" font-size="9" fill="#93c5fd">NET-OFF</text>
+  <text x="600" y="196" font-family="monospace" font-size="9" fill="#93c5fd">STATUS</text>
+  <rect x="60" y="208" width="680" height="22" rx="2" fill="#0a1628"/>
+  <text x="72" y="223" font-family="monospace" font-size="9" fill="#e2e8f0">Alpha F&amp;B</text>
+  <text x="152" y="223" font-family="monospace" font-size="9" fill="#e2e8f0">VN</text>
+  <text x="196" y="223" font-family="monospace" font-size="9" fill="#e2e8f0">Platform X</text>
+  <text x="276" y="223" font-family="monospace" font-size="9" fill="#e2e8f0">Jun-25</text>
+  <text x="356" y="223" font-family="monospace" font-size="9" fill="#e2e8f0">50,000</text>
+  <text x="436" y="223" font-family="monospace" font-size="9" fill="#e2e8f0">49,800</text>
+  <text x="516" y="223" font-family="monospace" font-size="9" fill="#e2e8f0">49,800</text>
+  <rect x="598" y="211" width="52" height="14" rx="3" fill="#22c55e" opacity="0.2"/>
+  <text x="606" y="223" font-family="monospace" font-size="9" fill="#86efac">Complete</text>
+  <rect x="60" y="232" width="680" height="22" rx="2" fill="#0d1f3c"/>
+  <text x="72" y="247" font-family="monospace" font-size="9" fill="#e2e8f0">Beta Retail</text>
+  <text x="152" y="247" font-family="monospace" font-size="9" fill="#e2e8f0">SG</text>
+  <text x="196" y="247" font-family="monospace" font-size="9" fill="#e2e8f0">Platform Y</text>
+  <text x="276" y="247" font-family="monospace" font-size="9" fill="#e2e8f0">Jun-25</text>
+  <text x="356" y="247" font-family="monospace" font-size="9" fill="#e2e8f0">120,000</text>
+  <text x="436" y="247" font-family="monospace" font-size="9" fill="#fbbf24">Pending</text>
+  <text x="516" y="247" font-family="monospace" font-size="9" fill="#94a3b8">—</text>
+  <rect x="598" y="235" width="52" height="14" rx="3" fill="#fbbf24" opacity="0.2"/>
+  <text x="606" y="247" font-family="monospace" font-size="9" fill="#fcd34d">Partial</text>
+  <rect x="60" y="256" width="680" height="22" rx="2" fill="#0a1628"/>
+  <text x="72" y="271" font-family="monospace" font-size="9" fill="#e2e8f0">Gamma Tech</text>
+  <text x="152" y="271" font-family="monospace" font-size="9" fill="#e2e8f0">MY</text>
+  <text x="196" y="271" font-family="monospace" font-size="9" fill="#e2e8f0">Platform Z</text>
+  <text x="276" y="271" font-family="monospace" font-size="9" fill="#e2e8f0">May-25</text>
+  <text x="356" y="271" font-family="monospace" font-size="9" fill="#e2e8f0">75,000</text>
+  <text x="436" y="271" font-family="monospace" font-size="9" fill="#e2e8f0">75,000</text>
+  <text x="516" y="271" font-family="monospace" font-size="9" fill="#ef4444">—</text>
+  <rect x="598" y="259" width="68" height="14" rx="3" fill="#ef4444" opacity="0.2"/>
+  <text x="603" y="271" font-family="monospace" font-size="9" fill="#fca5a5">Net-off Pending</text>
+  <rect x="60" y="280" width="680" height="22" rx="2" fill="#0d1f3c"/>
+  <text x="72" y="295" font-family="monospace" font-size="9" fill="#e2e8f0">Delta Foods</text>
+  <text x="152" y="295" font-family="monospace" font-size="9" fill="#e2e8f0">ID</text>
+  <text x="196" y="295" font-family="monospace" font-size="9" fill="#e2e8f0">Platform X</text>
+  <text x="276" y="295" font-family="monospace" font-size="9" fill="#e2e8f0">Jun-25</text>
+  <text x="356" y="295" font-family="monospace" font-size="9" fill="#e2e8f0">90,000</text>
+  <text x="436" y="295" font-family="monospace" font-size="9" fill="#e2e8f0">90,000</text>
+  <text x="516" y="295" font-family="monospace" font-size="9" fill="#e2e8f0">90,000</text>
+  <rect x="598" y="283" width="52" height="14" rx="3" fill="#22c55e" opacity="0.2"/>
+  <text x="606" y="295" font-family="monospace" font-size="9" fill="#86efac">Complete</text>
+  <!-- Summary bars -->
+  <text x="60" y="334" font-family="monospace" font-size="10" fill="#93c5fd">REGIONAL SUMMARY</text>
+  <text x="60" y="360" font-family="monospace" font-size="9" fill="#94a3b8">VN</text>
+  <rect x="90" y="350" width="300" height="14" rx="3" fill="#22c55e" opacity="0.7"/>
+  <text x="396" y="362" font-family="monospace" font-size="9" fill="#86efac">78%</text>
+  <text x="60" y="386" font-family="monospace" font-size="9" fill="#94a3b8">SG</text>
+  <rect x="90" y="376" width="200" height="14" rx="3" fill="#fbbf24" opacity="0.6"/>
+  <text x="296" y="388" font-family="monospace" font-size="9" fill="#fcd34d">52%</text>
+  <text x="60" y="412" font-family="monospace" font-size="9" fill="#94a3b8">MY</text>
+  <rect x="90" y="402" width="250" height="14" rx="3" fill="#22c55e" opacity="0.5"/>
+  <text x="346" y="414" font-family="monospace" font-size="9" fill="#86efac">64%</text>
+  <text x="60" y="448" font-family="monospace" font-size="9" fill="#93c5fd" opacity="0.6">* Visuals use recreated/anonymized data to protect confidential business information.</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <rect width="400" height="250" fill="#1a3a6c"/>
+  <rect x="12" y="12" width="376" height="226" rx="8" fill="#0d1f3c"/>
+  <rect x="12" y="12" width="376" height="34" rx="8" fill="#1a3a6c"/>
+  <rect x="12" y="34" width="376" height="12" fill="#1a3a6c"/>
+  <text x="28" y="33" font-family="monospace" font-size="8" fill="#93c5fd" font-weight="bold">CLAIMBACK MASTER TRACKER</text>
+  <rect x="24" y="55" width="55" height="20" rx="4" fill="#1a3a6c"/>
+  <text x="34" y="68" font-family="monospace" font-size="8" fill="#fff">🇻🇳 VN</text>
+  <rect x="86" y="55" width="55" height="20" rx="4" fill="#1a3a6c"/>
+  <text x="96" y="68" font-family="monospace" font-size="8" fill="#fff">🇸🇬 SG</text>
+  <rect x="148" y="55" width="55" height="20" rx="4" fill="#1a3a6c"/>
+  <text x="158" y="68" font-family="monospace" font-size="8" fill="#fff">🇲🇾 MY</text>
+  <rect x="210" y="55" width="55" height="20" rx="4" fill="#1a3a6c"/>
+  <text x="220" y="68" font-family="monospace" font-size="8" fill="#fff">🇮🇩 ID</text>
+  <rect x="272" y="55" width="55" height="20" rx="4" fill="#1a3a6c"/>
+  <text x="282" y="68" font-family="monospace" font-size="8" fill="#fff">🇵🇭 PH</text>
+  <rect x="334" y="55" width="55" height="20" rx="4" fill="#1a3a6c"/>
+  <text x="344" y="68" font-family="monospace" font-size="8" fill="#fff">🇹🇭 TH</text>
+  <rect x="24" y="86" width="352" height="16" rx="3" fill="#1a3a6c"/>
+  <text x="30" y="97" font-family="monospace" font-size="6" fill="#93c5fd">BRAND · CTY · PLATFORM · PERIOD · ACCRUAL · INVOICE · NET-OFF · STATUS</text>
+  <rect x="24" y="104" width="352" height="14" rx="2" fill="#0a1628"/>
+  <text x="30" y="115" font-family="monospace" font-size="7" fill="#e2e8f0">Alpha F&amp;B · VN · Platform X · Jun-25 · 50K · 49.8K · 49.8K</text>
+  <rect x="320" y="106" width="44" height="10" rx="2" fill="#22c55e" opacity="0.2"/>
+  <text x="326" y="115" font-family="monospace" font-size="7" fill="#86efac">Complete</text>
+  <rect x="24" y="120" width="352" height="14" rx="2" fill="#0d1f3c"/>
+  <text x="30" y="131" font-family="monospace" font-size="7" fill="#e2e8f0">Beta Retail · SG · Platform Y · Jun-25 · 120K</text>
+  <rect x="320" y="122" width="40" height="10" rx="2" fill="#fbbf24" opacity="0.2"/>
+  <text x="324" y="131" font-family="monospace" font-size="7" fill="#fcd34d">Partial</text>
+  <rect x="24" y="136" width="352" height="14" rx="2" fill="#0a1628"/>
+  <text x="30" y="147" font-family="monospace" font-size="7" fill="#e2e8f0">Gamma Tech · MY · Platform Z · May-25 · 75K · 75K</text>
+  <rect x="308" y="138" width="60" height="10" rx="2" fill="#ef4444" opacity="0.2"/>
+  <text x="312" y="147" font-family="monospace" font-size="7" fill="#fca5a5">Net-off Pend.</text>
+  <text x="24" y="178" font-family="monospace" font-size="7" fill="#93c5fd">REGIONAL COMPLETION</text>
+  <text x="24" y="196" font-family="monospace" font-size="7" fill="#94a3b8">VN</text>
+  <rect x="48" y="187" width="160" height="10" rx="2" fill="#22c55e" opacity="0.6"/>
+  <text x="214" y="196" font-family="monospace" font-size="7" fill="#86efac">78%</text>
+  <text x="24" y="212" font-family="monospace" font-size="7" fill="#94a3b8">SG</text>
+  <rect x="48" y="203" width="100" height="10" rx="2" fill="#fbbf24" opacity="0.5"/>
+  <text x="154" y="212" font-family="monospace" font-size="7" fill="#fcd34d">52%</text>
+  <text x="24" y="240" font-family="monospace" font-size="6" fill="#93c5fd" opacity="0.5">Google Sheets · Apps Script · Power Query</text>
+</svg>
