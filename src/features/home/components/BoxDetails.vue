@@ -91,11 +91,11 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
           </div>
           <div class="box-details-item box-details-item--role">
             <span class="box-details-dot"></span>
-            <span class="box-details-content-copy">Finance Supervisor</span>
+            <span class="box-details-content-copy">Finance Transformation</span>
           </div>
           <div class="box-details-item box-details-item--role">
             <span class="box-details-dot"></span>
-            <span class="box-details-content-copy">Former EY Senior</span>
+            <span class="box-details-content-copy">Controls &amp; Automation</span>
           </div>
         </div>
       </div>

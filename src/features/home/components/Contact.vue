@@ -77,8 +77,9 @@ onUnmounted(() => {
 
   &-title {
     font-weight: 900;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.01em;
     font-size: var(--font-size-title-md);
+    text-wrap: balance;
 
     @include mixins.mq("sm") { font-size: var(--font-size-title-lg); }
     @include mixins.mq("xl") { font-size: var(--font-size-title-xl); }
@@ -86,9 +87,9 @@ onUnmounted(() => {
 
   &-lead {
     font-size: var(--font-size-md);
-    line-height: 1.6;
+    line-height: 1.65;
     max-width: 440px;
-    opacity: 0.7;
+    color: var(--color-text-300);
 
     @include mixins.mq("md") { font-size: var(--font-size-lg); }
   }
@@ -105,27 +106,30 @@ onUnmounted(() => {
     }
 
     &-label {
-      font-family: "ProFontWindows", monospace;
       font-size: 11px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      opacity: 0.45;
+      letter-spacing: 0.12em;
+      color: var(--color-text-200);
       min-width: 70px;
     }
 
     &-value {
       font-size: var(--font-size-md);
       font-weight: 600;
+      color: var(--color-text-400);
     }
 
     &-link {
       text-decoration: none;
       color: inherit;
-      border-bottom: 1px solid currentColor;
-      opacity: 0.8;
-      transition: opacity 0.2s;
+      border-bottom: 1px solid rgba(45, 42, 36, 0.3);
+      transition: border-color 0.2s, color 0.2s;
 
-      &:hover { opacity: 1; }
+      &:hover {
+        color: var(--color-dark-blue-500);
+        border-color: var(--color-dark-blue-500);
+      }
     }
   }
 }

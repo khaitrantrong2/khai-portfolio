@@ -28,37 +28,31 @@ onMounted(loadPreviews);
 
 const highlights = [
   {
-    icon: "★",
     label: "EY Idol 2022",
     value: "Top 3",
     desc: "Recognized in an internal talent and engagement competition during my EY journey.",
   },
   {
-    icon: "◎",
     label: "EY Performance",
     value: "4.5 / 5",
     desc: "Performance rating reflecting strong ownership, execution, and professional growth.",
   },
   {
-    icon: "◈",
     label: "Regional Scope",
     value: "VN · SG · MY · ID · PH · TH",
     desc: "Experience supporting finance operations across multiple Southeast Asian markets.",
   },
   {
-    icon: "◆",
     label: "Military Service",
     value: "Military-region unit",
     desc: "Built discipline, structure, responsibility, and execution under pressure.",
   },
   {
-    icon: "◉",
     label: "Education",
     value: "Hoa Sen University",
     desc: "Accounting & Auditing — GPA 3.35 / 4.0.",
   },
   {
-    icon: "⬡",
     label: "Data Analytics",
     value: "Swiss Coding Academy",
     desc: "Data Analytics track focused on analytical thinking and practical data workflows.",
@@ -85,11 +79,17 @@ const highlights = [
         <PreviewCard v-for="preview in loadedPreviews" :key="preview.title" :preview="preview" />
       </div>
     </div>
+    <div class="grid">
+      <div class="projects-confidential">
+        <span class="projects-confidential-note">Visuals use recreated or anonymized data.</span>
+      </div>
+    </div>
 
     <!-- Career Highlights -->
     <div class="grid">
       <div class="projects-highlights">
-        <h3 class="projects-highlights-title">Career Highlights</h3>
+        <span class="projects-highlights-label">Career Highlights</span>
+        <h3 class="projects-highlights-title">{{ t("highlights") }}</h3>
         <p class="projects-highlights-intro">
           Selected milestones that reflect a mix of finance foundation, execution discipline, and
           continuous learning.
@@ -100,12 +100,9 @@ const highlights = [
             v-for="h in highlights"
             :key="h.label"
           >
-            <span class="projects-highlight-card-icon">{{ h.icon }}</span>
-            <div class="projects-highlight-card-body">
-              <p class="projects-highlight-card-label">{{ h.label }}</p>
-              <p class="projects-highlight-card-value">{{ h.value }}</p>
-              <p class="projects-highlight-card-desc">{{ h.desc }}</p>
-            </div>
+            <p class="projects-highlight-card-label">{{ h.label }}</p>
+            <p class="projects-highlight-card-value">{{ h.value }}</p>
+            <p class="projects-highlight-card-desc">{{ h.desc }}</p>
           </div>
         </div>
       </div>
@@ -145,12 +142,13 @@ const highlights = [
     grid-column: 1 / 13;
 
     @include mixins.mq("md") { grid-column: 1 / 10; }
-    @include mixins.mq("lg") { grid-column: 3 / 8; }
+    @include mixins.mq("lg") { grid-column: 3 / 9; }
 
     &-copy {
       font-weight: 900;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.01em;
       font-size: var(--font-size-title-md);
+      text-wrap: balance;
 
       @include mixins.mq("sm") { font-size: var(--font-size-title-lg); }
       @include mixins.mq("xl") { font-size: var(--font-size-title-xl); }
@@ -158,34 +156,22 @@ const highlights = [
 
     &-label {
       display: block;
-      font-family: "ProFontWindows", monospace;
-      font-size: 12px;
+      font-size: 11px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      opacity: 0.45;
+      letter-spacing: 0.14em;
+      color: var(--color-text-200);
       margin-bottom: var(--space-xs);
     }
 
     &-intro {
       font-size: var(--font-size-md);
-      line-height: 1.6;
-      max-width: 620px;
-      opacity: 0.65;
+      line-height: 1.65;
+      max-width: 600px;
+      color: var(--color-text-300);
       margin-top: var(--space-md);
 
       @include mixins.mq("md") { font-size: var(--font-size-lg); }
-    }
-
-    &-banner {
-      position: absolute;
-      top: 0;
-      left: -8px;
-      transform: translate(0, -20%) rotate(-4deg);
-
-      @include mixins.mq("lg") {
-        left: -16px;
-        transform: translate(0, -20%) rotate(-6deg);
-      }
     }
   }
 
@@ -228,28 +214,51 @@ const highlights = [
     }
   }
 
-  // Highlights section
+  &-confidential {
+    grid-column: 1 / span 12;
+
+    @include mixins.mq("lg") { grid-column: 3 / span 8; }
+
+    &-note {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-200);
+      font-style: italic;
+      letter-spacing: 0.01em;
+    }
+  }
+
+  /* Highlights section */
   &-highlights {
     grid-column: 1 / span 12;
     width: 100%;
 
     @include mixins.mq("lg") { grid-column: 3 / span 8; }
 
+    &-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--color-text-200);
+      margin-bottom: var(--space-xs);
+    }
+
     &-title {
       font-weight: 900;
-      letter-spacing: 0.04em;
+      letter-spacing: -0.01em;
+      font-size: var(--font-size-title-sm);
       margin-bottom: var(--space-sm);
-      opacity: 0.5;
-      text-transform: uppercase;
-      font-size: 12px;
-      font-family: "ProFontWindows", monospace;
+
+      @include mixins.mq("sm") { font-size: var(--font-size-title-md); }
     }
 
     &-intro {
       font-size: var(--font-size-md);
-      line-height: 1.6;
+      line-height: 1.65;
       max-width: 560px;
-      opacity: 0.6;
+      color: var(--color-text-300);
       margin-bottom: var(--space-lg);
     }
 
@@ -266,53 +275,46 @@ const highlights = [
 
   &-highlight-card {
     display: flex;
-    align-items: flex-start;
-    gap: var(--space-sm);
-    padding: var(--space-md);
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    background: rgba(255, 255, 255, 0.5);
-    transition: background 0.2s ease, border-color 0.2s ease;
+    flex-direction: column;
+    gap: 4px;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-card);
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-card-border);
+    box-shadow: var(--shadow-card);
+    transition:
+      background 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.8);
-      border-color: rgba(0, 0, 0, 0.14);
-    }
-
-    &-icon {
-      font-size: 18px;
-      line-height: 1;
-      opacity: 0.4;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    &-body {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    @include mixins.hover {
+      &:hover {
+        background: var(--color-card-bg-hover);
+        border-color: var(--color-card-border-hover);
+        box-shadow: var(--shadow-card-hover);
+        transform: translateY(-2px);
+      }
     }
 
     &-label {
-      font-size: var(--font-size-sm);
+      font-size: 11px;
       font-weight: 700;
-      opacity: 0.5;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-size: 10px;
-      font-family: "ProFontWindows", monospace;
+      letter-spacing: 0.1em;
+      color: var(--color-cyan-500);
     }
 
     &-value {
       font-size: var(--font-size-md);
-      font-weight: 600;
+      font-weight: 700;
+      color: var(--color-text-400);
       line-height: 1.3;
     }
 
     &-desc {
       font-size: var(--font-size-sm);
-      line-height: 1.5;
-      opacity: 0.55;
+      line-height: 1.55;
+      color: var(--color-text-300);
       margin-top: 4px;
     }
   }

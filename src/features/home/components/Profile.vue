@@ -18,7 +18,7 @@ const workChips = [
     <NotchSection class="profile-notch-start" />
     <div class="grid">
       <div class="profile-header">
-        <span class="profile-label">Profile</span>
+        <span class="profile-label">About me</span>
         <h2 class="profile-title">{{ t("about") }}</h2>
         <p class="profile-intro">{{ t("about-intro") }}</p>
       </div>
@@ -38,21 +38,22 @@ const workChips = [
         <article class="profile-card">
           <span class="profile-card-tag">Background</span>
           <p class="profile-card-body">
-            Audit and financial-statement review, internal controls, reconciliations,
-            revenue-related review, and stakeholder management. This shapes how I approach
-            automation: every tool should support traceability, reviewability, and better control.
+            Former EY Senior with experience in audit, financial-statement review, internal
+            controls, reconciliations, revenue-related review, and stakeholder management. This
+            background shapes how I approach automation: every tool should support traceability,
+            reviewability, and better control.
           </p>
         </article>
 
         <article class="profile-card profile-card--work">
-          <span class="profile-card-tag">What I Work On</span>
+          <span class="profile-card-tag">What I work on</span>
           <div class="profile-card-chips">
             <span class="profile-chip" v-for="chip in workChips" :key="chip">{{ chip }}</span>
           </div>
         </article>
 
         <article class="profile-card">
-          <span class="profile-card-tag">Discipline &amp; Structure</span>
+          <span class="profile-card-tag">Discipline &amp; structure</span>
           <p class="profile-card-body">
             Completed military service in a military-region unit — strengthening discipline,
             structure, ownership, and execution under pressure.
@@ -60,7 +61,7 @@ const workChips = [
         </article>
 
         <article class="profile-card">
-          <span class="profile-card-tag">Education &amp; Learning</span>
+          <span class="profile-card-tag">Education &amp; learning</span>
           <p class="profile-card-body">
             <strong>Hoa Sen University</strong> — Accounting &amp; Auditing · GPA 3.35 / 4.0<br />
             <strong>Swiss Coding Academy</strong> — Data Analytics
@@ -103,28 +104,30 @@ const workChips = [
   }
 
   &-label {
-    font-family: "ProFontWindows", monospace;
-    font-size: 12px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    opacity: 0.45;
+    letter-spacing: 0.14em;
+    color: var(--color-text-200);
+    margin-bottom: var(--space-xs);
   }
 
   &-title {
     font-weight: 900;
-    letter-spacing: 0.01em;
+    letter-spacing: -0.01em;
     font-size: var(--font-size-title-md);
-    margin-top: var(--space-xs);
     margin-bottom: var(--space-md);
+    text-wrap: balance;
 
     @include mixins.mq("sm") { font-size: var(--font-size-title-lg); }
   }
 
   &-intro {
     font-size: var(--font-size-md);
-    line-height: 1.6;
-    max-width: 720px;
-    opacity: 0.7;
+    line-height: 1.65;
+    max-width: 680px;
+    color: var(--color-text-300);
 
     @include mixins.mq("md") { font-size: var(--font-size-lg); }
   }
@@ -142,20 +145,30 @@ const workChips = [
     }
   }
 
+  /* Double-bezel card shell */
   &-card {
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    background: rgba(255, 255, 255, 0.55);
-    border-radius: var(--radius-md);
+    position: relative;
+    border-radius: var(--radius-card);
     padding: var(--space-lg);
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
-    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    transition:
+      background 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.85);
-      border-color: rgba(0, 0, 0, 0.14);
-      transform: translateY(-2px);
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-card-border);
+    box-shadow: var(--shadow-card);
+
+    @include mixins.hover {
+      &:hover {
+        background: var(--color-card-bg-hover);
+        border-color: var(--color-card-border-hover);
+        box-shadow: var(--shadow-card-hover);
+        transform: translateY(-2px);
+      }
     }
 
     &--work {
@@ -163,37 +176,41 @@ const workChips = [
     }
 
     &-tag {
-      font-family: "ProFontWindows", monospace;
       font-size: 11px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--color-text-cyan-600, #1a8a78);
-      opacity: 0.85;
+      letter-spacing: 0.1em;
+      color: var(--color-cyan-500);
     }
 
     &-body {
       font-size: var(--font-size-md);
-      line-height: 1.6;
-      opacity: 0.8;
+      line-height: 1.65;
+      color: var(--color-text-300);
 
-      strong { font-weight: 700; opacity: 1; }
+      strong {
+        font-weight: 700;
+        color: var(--color-text-400);
+      }
     }
 
     &-chips {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--space-xs);
+      gap: 8px;
     }
   }
 
   &-chip {
-    font-size: var(--font-size-sm);
+    font-size: 13px;
     font-weight: 600;
     padding: 6px 14px;
     border-radius: 100px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 90, 160, 0.18);
+    color: var(--color-dark-blue-500);
+    background: rgba(255, 255, 255, 0.7);
     white-space: nowrap;
+    letter-spacing: 0.01em;
   }
 }
 </style>

@@ -28,11 +28,21 @@ onMounted(async () => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: wrapperRef.value,
-      start: "top bottom",
+      start: "top bottom-=40",
     },
   });
-  tl.fromTo(wrapperRef.value, { scale: 0.8 }, { scale: 1, duration: 0.4, ease: "power1.out" }, 0);
-  tl.fromTo(imageRef.value, { scale: 1.2 }, { scale: 1, duration: 0.4, ease: "power1.out" }, 0);
+  tl.fromTo(
+    wrapperRef.value,
+    { opacity: 0, y: 24 },
+    { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" },
+    0,
+  );
+  tl.fromTo(
+    imageRef.value,
+    { scale: 1.05 },
+    { scale: 1, duration: 0.55, ease: "power2.out" },
+    0,
+  );
 
   tlRef.value = tl;
 });
@@ -55,26 +65,28 @@ onUnmounted(() => {
     data-hoversound="hover"
     v-if="props.preview"
   >
-    <div class="preview-card-top" ref="wrapperRef">
-      <div class="preview-card-image-wrapper">
-        <div class="preview-card-image-container">
-          <img :src="props.preview.thumbnail" :alt="props.preview.title" class="preview-card-image" ref="imageRef" />
+    <div class="preview-card-shell">
+      <div class="preview-card-top" ref="wrapperRef">
+        <div class="preview-card-image-wrapper">
+          <div class="preview-card-image-container">
+            <img :src="props.preview.thumbnail" :alt="props.preview.title" class="preview-card-image" ref="imageRef" />
+          </div>
+        </div>
+        <div class="preview-card-overlay">
+          <div class="preview-card-edge">
+            <ButtonRound class="preview-card-button" variant="accent" renderAs="div">
+              <ArrowRightLong class="preview-card-button-arrow" />
+            </ButtonRound>
+          </div>
+          <Notch class="preview-card-notch preview-card-notch-left" />
+          <Notch class="preview-card-notch preview-card-notch-right" />
         </div>
       </div>
-      <div class="preview-card-overlay">
-        <div class="preview-card-edge">
-          <ButtonRound class="preview-card-button" variant="accent" renderAs="div">
-            <ArrowRightLong class="preview-card-button-arrow" />
-          </ButtonRound>
+      <div class="preview-card-content">
+        <div class="preview-card-copys">
+          <h3 class="preview-card-title">{{ props.preview.title }}</h3>
+          <p class="preview-card-description">{{ props.preview.description }}</p>
         </div>
-        <Notch class="preview-card-notch preview-card-notch-left" />
-        <Notch class="preview-card-notch preview-card-notch-right" />
-      </div>
-    </div>
-    <div class="preview-card-content">
-      <div class="preview-card-copys">
-        <h3 class="preview-card-title">{{ props.preview.title }}</h3>
-        <p class="preview-card-description">{{ props.preview.description }}</p>
       </div>
     </div>
   </Link>
@@ -87,12 +99,14 @@ onUnmounted(() => {
     external
     :href="social[0].url"
   >
-    <div class="preview-card-top preview-card-top-empty">
-      <Plus class="preview-card-top-empty-icon" />
-    </div>
-    <div class="preview-card-content">
-      <div class="preview-card-copys">
-        <h3 class="preview-card-title">{{ t("start-a-new-project") }}</h3>
+    <div class="preview-card-shell">
+      <div class="preview-card-top preview-card-top-empty">
+        <Plus class="preview-card-top-empty-icon" />
+      </div>
+      <div class="preview-card-content">
+        <div class="preview-card-copys">
+          <h3 class="preview-card-title">{{ t("start-a-new-project") }}</h3>
+        </div>
       </div>
     </div>
   </Link>
@@ -104,29 +118,25 @@ onUnmounted(() => {
   position: relative;
   border-radius: var(--radius-xl);
   z-index: var(--z-index-layout);
+  display: block;
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    width: calc(100% + 16px);
-    height: calc(100% + 16px);
-    background-color: var(--color-grayscale-400);
+  &-shell {
     border-radius: var(--radius-xl);
-    z-index: -1;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.1s ease-in-out;
+    transition:
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+    @include mixins.hover {
+      .preview-card:hover & {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 32px rgba(45, 42, 36, 0.10), 0 2px 8px rgba(45, 42, 36, 0.07);
+      }
+    }
   }
 
   @include mixins.hover {
     &:hover {
       --hover: 1;
-
-      &::after {
-        opacity: 1;
-      }
     }
   }
 
@@ -175,7 +185,7 @@ onUnmounted(() => {
 
   &-button {
     &-arrow {
-      transition: transform 0.1s ease-in-out;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       width: 100%;
       transform: rotate(calc(var(--hover) * -45deg));
     }
@@ -187,8 +197,8 @@ onUnmounted(() => {
     object-fit: cover;
 
     &-container {
-      transition: transform 0.1s ease-in-out;
-      transform: scale(calc(1 + var(--hover) * 0.02));
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(calc(1 + var(--hover) * 0.025));
       aspect-ratio: 16/9;
     }
 
@@ -205,7 +215,7 @@ onUnmounted(() => {
     aspect-ratio: 16/9;
 
     &-empty {
-      border: 4px dashed var(--color-grayscale-500);
+      border: 1px dashed var(--color-grayscale-500);
       border-radius: var(--radius-lg);
       background-color: var(--color-grayscale-400);
       display: flex;
@@ -216,7 +226,7 @@ onUnmounted(() => {
         width: var(--icon-size-lg);
         color: var(--color-text-300);
         --icon-color: var(--color-text-300);
-        --stroke-width: 4px;
+        --stroke-width: 2px;
       }
     }
   }
@@ -224,18 +234,21 @@ onUnmounted(() => {
   &-copys {
     display: flex;
     flex-direction: column;
+    gap: 4px;
   }
 
   &-title {
     font-size: var(--font-size-title-xs);
     font-weight: 700;
     color: var(--color-text-400);
+    letter-spacing: -0.01em;
   }
 
   &-description {
     font-size: var(--font-size-md);
     color: var(--color-text-300);
     font-weight: 500;
+    line-height: 1.4;
   }
 }
 </style>
