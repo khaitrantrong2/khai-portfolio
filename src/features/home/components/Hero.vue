@@ -88,7 +88,8 @@ import { preloaderVisible } from "../../../composables/usePreloader";
     font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--color-text-cyan-400, rgba(77, 217, 192, 0.85));
+    color: var(--color-cyan-500);
+    font-weight: 700;
     margin-bottom: 2px;
   }
 
@@ -117,7 +118,7 @@ import { preloaderVisible } from "../../../composables/usePreloader";
     font-weight: 700;
     font-size: var(--font-size-md);
     text-align: center;
-    opacity: 0.85;
+    color: var(--color-text-400);
 
     @include mixins.landscape {
       text-align: left;
@@ -130,7 +131,8 @@ import { preloaderVisible } from "../../../composables/usePreloader";
     line-height: 1.55;
     max-width: 440px;
     text-align: center;
-    opacity: 0.6;
+    color: var(--color-text-300);
+    font-weight: 500;
     margin-top: 2px;
 
     @include mixins.landscape {
@@ -155,16 +157,17 @@ import { preloaderVisible } from "../../../composables/usePreloader";
     font-size: 11px;
     padding: 5px 12px;
     border-radius: var(--radius-sm, 6px);
-    border: 1px solid var(--color-cyan-400, rgba(77, 217, 192, 0.5));
-    color: var(--color-text-cyan-400, rgba(77, 217, 192, 0.85));
-    background: rgba(77, 217, 192, 0.06);
+    border: 1px solid rgba(0, 134, 187, 0.55);
+    color: var(--color-dark-blue-500);
+    background: rgba(255, 255, 255, 0.64);
     white-space: nowrap;
     letter-spacing: 0.04em;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
 
     &--tech {
-      color: rgba(255, 255, 255, 0.6);
-      border-color: rgba(255, 255, 255, 0.25);
-      background: rgba(255, 255, 255, 0.04);
+      color: #6f3b00;
+      border-color: rgba(255, 132, 0, 0.55);
+      background: rgba(255, 246, 232, 0.78);
     }
   }
 }
