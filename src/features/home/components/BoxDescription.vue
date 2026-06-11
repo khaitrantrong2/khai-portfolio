@@ -83,8 +83,8 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
           />
         </div>
         <div class="box-description-meta">
-          <span class="box-description-tag">Finance Transformation</span>
-          <span class="box-description-tag">Controls &amp; Automation</span>
+          <span class="box-description-tag">EY Senior · 4 yrs</span>
+          <span class="box-description-tag">IFRS · Controls · FP&amp;A</span>
         </div>
       </div>
     </div>

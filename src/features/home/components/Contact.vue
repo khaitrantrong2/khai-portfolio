@@ -23,8 +23,8 @@ onUnmounted(() => {
       <h2 class="contact-title" v-html="t('lets-work-together')"></h2>
 
       <p class="contact-lead">
-        If you'd like to connect or exchange ideas on finance transformation, controls, and
-        automation, feel free to reach out.
+        Finance, controls, analytics, or just a good conversation about building better systems —
+        always happy to connect.
       </p>
 
       <div class="contact-info">

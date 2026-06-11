@@ -116,16 +116,16 @@ onBeforeUnmount(() => {
     <div class="hero-content grid">
       <div class="hero-content-inner" id="hero-content-inner">
         <div class="hero-content-copys">
-          <span class="hero-eyebrow">Finance Transformation, Controls &amp; Automation</span>
+          <span class="hero-eyebrow">Finance &middot; Controls &middot; FP&amp;A</span>
           <h1 class="hero-title">Khai Tran</h1>
-          <p class="hero-role">Finance Supervisor — Value Protection, Claimback &amp; AR</p>
+          <p class="hero-role">Finance Supervisor &mdash; EY-trained &middot; IFRS &middot; SE Asia</p>
           <p class="hero-statement">
-            I build structured finance systems that improve control, visibility, and scalability.
+            I turn financial complexity into structured, auditable systems &mdash; from controls and reporting to automation across regional operations.
           </p>
           <div class="hero-chips">
-            <span class="hero-chip">Former EY Senior</span>
-            <span class="hero-chip">Regional Finance Operations</span>
-            <span class="hero-chip hero-chip--tech">Python&thinsp;·&thinsp;Power BI&thinsp;·&thinsp;NetSuite</span>
+            <span class="hero-chip">4 yrs EY Senior Auditor</span>
+            <span class="hero-chip">IFRS &middot; VAS &middot; Internal Controls</span>
+            <span class="hero-chip hero-chip--tech">Power BI &thinsp;&middot;&thinsp; SQL &thinsp;&middot;&thinsp; Python</span>
           </div>
         </div>
       </div>

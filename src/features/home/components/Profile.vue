@@ -3,13 +3,14 @@ import { t } from "../../../i18n/utils/translate";
 import NotchSection from "../../../components/NotchSection.vue";
 
 const workChips = [
-  "Claimback review",
+  "Claimback & Value Protection",
   "AR monitoring",
-  "GL analytics",
-  "Finance controls",
+  "GL review & reconciliation",
+  "Internal controls",
+  "IFRS & VAS reporting",
+  "Power BI dashboards",
   "Process automation",
-  "Management visibility",
-  "Reviewer-friendly workflows",
+  "Management reporting",
 ];
 </script>
 
@@ -27,21 +28,22 @@ const workChips = [
     <div class="grid">
       <div class="profile-cards">
         <article class="profile-card">
-          <span class="profile-card-tag">Profile Snapshot</span>
+          <span class="profile-card-tag">Current role</span>
           <p class="profile-card-body">
-            Based in Vietnam, with experience supporting cross-country finance operations across
-            VN, SG, MY, ID, PH, and TH. Current focus areas include Value Protection, Claimback,
-            Accounts Receivable, General Ledger review, finance controls, and process automation.
+            Finance Supervisor at Intrepid Asia, overseeing Value Protection, Claimback, and AR
+            across six Southeast Asian markets — VN, SG, MY, ID, PH, TH. Focus on building
+            reviewer-friendly workflows, tightening controls, and making financial data actionable
+            for regional management.
           </p>
         </article>
 
         <article class="profile-card">
-          <span class="profile-card-tag">Background</span>
+          <span class="profile-card-tag">EY foundation</span>
           <p class="profile-card-body">
-            Former EY Senior with experience in audit, financial-statement review, internal
-            controls, reconciliations, revenue-related review, and stakeholder management. This
-            background shapes how I approach automation: every tool should support traceability,
-            reviewability, and better control.
+            Four years as Senior Auditor at EY Vietnam: financial-statement audits (VAS &amp; IFRS),
+            internal controls assessment, GL analytics, and engagement management across ~12
+            engagements per year in multiple industries. Built a habit of tracing every number back
+            to its source — a discipline I carry into every system I build now.
           </p>
         </article>
 
@@ -53,18 +55,22 @@ const workChips = [
         </article>
 
         <article class="profile-card">
-          <span class="profile-card-tag">Discipline &amp; structure</span>
+          <span class="profile-card-tag">Analytics &amp; tools</span>
           <p class="profile-card-body">
-            Completed military service in a military-region unit — strengthening discipline,
-            structure, ownership, and execution under pressure.
+            Completed a Data Analytics program at Swiss Coding Academy — ETL pipelines with SQL,
+            Python &amp; Power Query; EDA and anomaly detection; statistical forecasting; Power BI
+            storytelling. HackerRank SQL (Intermediate) certified. Applying these directly to
+            FP&amp;A and reporting automation.
           </p>
         </article>
 
         <article class="profile-card">
-          <span class="profile-card-tag">Education &amp; learning</span>
+          <span class="profile-card-tag">Beyond finance</span>
           <p class="profile-card-body">
-            <strong>Hoa Sen University</strong> — Accounting &amp; Auditing · GPA 3.35 / 4.0<br />
-            <strong>Swiss Coding Academy</strong> — Data Analytics
+            Two years of military service in the Engineering Department, Region 7 — managing
+            inventory planning, warehouse reporting, and operational budgets in a demanding,
+            confidential setting. Sharpened the discipline and execution mindset I bring to every
+            deadline.
           </p>
         </article>
       </div>

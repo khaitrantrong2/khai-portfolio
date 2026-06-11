@@ -28,34 +28,34 @@ onMounted(loadPreviews);
 
 const highlights = [
   {
-    label: "EY Idol 2022",
+    label: "Thailand IPO · 2022",
+    value: "POPS Entertainment",
+    desc: "Represented EY Vietnam on-site in Bangkok for 2 months — IFRS conversion, adjustment schedules, and cross-border coordination with EY Thailand on an IPO engagement for a leading entertainment & advertising group.",
+  },
+  {
+    label: "EY Idols 2022",
     value: "Top 3",
-    desc: "Recognized in an internal talent and engagement competition during my EY journey.",
+    desc: "Firm-wide recognition for performance and leadership, competing across all service lines at EY Vietnam.",
   },
   {
-    label: "EY Performance",
+    label: "Performance Rating",
     value: "4.5 / 5",
-    desc: "Performance rating reflecting strong ownership, execution, and professional growth.",
+    desc: "Sustained rating across FY2020–FY2021, with ~180% chargeable utilization while managing multiple concurrent engagements.",
   },
   {
-    label: "Regional Scope",
+    label: "EuroCham Vietnam",
+    value: "AGM Representative",
+    desc: "Selected as EY Vietnam Audit Senior representative for EuroCham Vietnam AGM audits in 2021 and 2022.",
+  },
+  {
+    label: "Regional Operations",
     value: "VN · SG · MY · ID · PH · TH",
-    desc: "Experience supporting finance operations across multiple Southeast Asian markets.",
+    desc: "Currently overseeing finance operations across six Southeast Asian markets at Intrepid Asia.",
   },
   {
-    label: "Military Service",
-    value: "Military-region unit",
-    desc: "Built discipline, structure, responsibility, and execution under pressure.",
-  },
-  {
-    label: "Education",
-    value: "Hoa Sen University",
-    desc: "Accounting & Auditing — GPA 3.35 / 4.0.",
-  },
-  {
-    label: "Data Analytics",
-    value: "Swiss Coding Academy",
-    desc: "Data Analytics track focused on analytical thinking and practical data workflows.",
+    label: "Data Certification",
+    value: "SQL · Power BI · Python",
+    desc: "Swiss Coding Academy Data Analytics program + HackerRank SQL (Intermediate). Applied to forecasting, planning, and automation workflows.",
   },
 ];
 </script>
@@ -69,8 +69,8 @@ const highlights = [
         <span class="projects-title-label">Selected Systems &amp; Case Studies</span>
         <h2 class="projects-title-copy">{{ t("projects") }}</h2>
         <p class="projects-title-intro">
-          A collection of finance systems, review workflows, and analytics prototypes designed to
-          improve control, visibility, and operational scalability.
+          Finance systems, review workflows, and analytics prototypes — built to improve control,
+          reduce manual effort, and give management clearer visibility into what's happening.
         </p>
       </div>
     </div>
@@ -91,8 +91,8 @@ const highlights = [
         <span class="projects-highlights-label">Career Highlights</span>
         <h3 class="projects-highlights-title">{{ t("highlights") }}</h3>
         <p class="projects-highlights-intro">
-          Selected milestones that reflect a mix of finance foundation, execution discipline, and
-          continuous learning.
+          A few milestones across audit, international engagements, and continuous learning —
+          the experiences that shaped how I think about finance and controls.
         </p>
         <div class="projects-highlights-grid">
           <div
