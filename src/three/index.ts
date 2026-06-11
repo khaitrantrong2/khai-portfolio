@@ -1,24 +1,34 @@
 import { camera } from "./core/camera";
 import { renderer } from "./core/renderer";
-import { objects } from "./objects/index";
-import { raycast } from "./utils/raycast";
+import { objects } from "./objects";
+import { renderTarget } from "./core/renderTarget";
 import { threeSizes } from "./utils/sizes";
+import { resources } from "../utils/resources";
+import { raycast } from "./utils/raycast";
 
-const init = (canvas: HTMLCanvasElement) => {
-  threeSizes.init(canvas);
-  threeSizes.resize();
-  renderer.init(canvas);
-  camera.init();
-  objects.init();
-  raycast.init();
+let canvas: HTMLCanvasElement | null = null;
+
+const init = (_canvas: HTMLCanvasElement) => {
+  canvas = _canvas;
+
+  resources.once("ready", () => {
+    threeSizes.init(_canvas);
+    camera.init();
+    renderTarget.init();
+    renderer.init(canvas);
+
+    objects.init();
+    raycast.init();
+  });
 };
 
 const destroy = () => {
-  raycast.destroy();
+  threeSizes.destroy();
+  renderTarget.destroy();
+  renderer.destroy();
   objects.destroy();
   camera.destroy();
-  renderer.destroy();
-  threeSizes.destroy();
+  canvas = null;
 };
 
 export const three = { init, destroy };
