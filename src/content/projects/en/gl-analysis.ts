@@ -8,7 +8,7 @@ export default {
   tags: ["python", "duckdb", "sql", "excel", "netsuite"],
   videoBorder: false,
   description:
-    "A Python-based accounting review engine that analyzes general-ledger data and highlights transactions requiring deeper investigation. This is an evolving system, not a fully autonomous product.<br/><br/>Traditional GL review involved manually filtering large transaction files and depended heavily on reviewer experience. The engine applies a set of configurable rules to evaluate accounting entries and surface potential issues.<br/><br/>Review areas include accrual and reversal mismatches, missing reversals, incorrect accounts, incorrect classes or departments, incorrect activity periods, unbalanced pass-through arrangements, potential over- or under-accruals, and journal-entry anomalies.<br/><br/><em>Project visuals use recreated or anonymized data to protect confidential business information.</em>",
+    "A rule-based review engine for analyzing general-ledger data and highlighting transactions that may require deeper accounting review.<br/><br/><strong>Focus areas:</strong> accrual and reversal mismatches, missing reversals, incorrect accounts, wrong classes or departments, period issues, and pass-through imbalance checks.<br/><br/><strong>Tools:</strong> Python, DuckDB, Pandas, Excel, NetSuite GL data.<br/><br/><em>Rules and visuals are simplified for portfolio presentation.</em>",
   components: [
     {
       type: "media",

@@ -8,7 +8,7 @@ export default {
   tags: ["powerbi", "sheets", "powerquery", "netsuite", "finance"],
   videoBorder: false,
   description:
-    "Dashboard tài chính để theo dõi các khoản phải thu tồn đọng, lịch trình xử lý, tranh chấp, trạng thái thanh toán và số dư kéo dài.<br/><br/>Dashboard chuyển đổi hồ sơ giao dịch vận hành từ NetSuite thành phân tích vốn lưu động có thể thực hiện được, cho phép quản lý chủ động danh mục AR.<br/><br/>Các phân tích chính bao gồm chu kỳ từ bút toán nhật ký đến hóa đơn, chu kỳ từ hóa đơn đến net-off, phân tích tuổi tồn đọng, cờ 60 và 90 ngày, phân tích chi tiết theo thương hiệu và quốc gia, theo dõi lý do tranh chấp, và khả năng hiển thị thu nợ và thanh toán.<br/><br/><em>Hình ảnh dự án sử dụng dữ liệu được tái tạo hoặc ẩn danh để bảo vệ thông tin kinh doanh bảo mật.</em>",
+    "A dashboard concept for monitoring receivable aging, invoice-to-settlement cycles, dispute status, and long-lasting balances.<br/><br/><strong>Focus areas:</strong> outstanding receivables, aging review, invoice-to-net-off cycle, dispute visibility, and working-capital monitoring.<br/><br/><strong>Tools:</strong> Power BI, Power Query, Google Sheets, NetSuite data.<br/><br/><em>Figures and visuals are anonymized mock data.</em>",
   components: [
     {
       type: "media",

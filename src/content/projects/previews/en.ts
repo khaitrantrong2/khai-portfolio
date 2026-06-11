@@ -23,7 +23,7 @@ export default [
     title: "Claimback Master Tracker",
     slug: "claimback-tracker",
     thumbnail: thumbnailClaimbackTracker,
-    description: "Regional claimback data model — 6 countries",
+    description: "Regional claimback data model",
   },
   {
     title: "AR Monitoring Dashboard",

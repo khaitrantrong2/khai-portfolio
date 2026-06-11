@@ -4,7 +4,6 @@ import { previews } from "../../../content/projects/previews";
 import { locale } from "../../../i18n/store";
 import PreviewCard from "../../projects/components/PreviewCard.vue";
 import NotchSection from "../../../components/NotchSection.vue";
-import Banner from "../../../components/Banner.vue";
 import { t } from "../../../i18n/utils/translate";
 
 import type { ProjectPreview } from "../../../content/types";
@@ -28,12 +27,42 @@ watch(locale, loadPreviews);
 onMounted(loadPreviews);
 
 const highlights = [
-  { icon: "★", label: "EY Idol 2022", value: "Top 3" },
-  { icon: "◎", label: "EY Performance", value: "4.5 / 5" },
-  { icon: "◈", label: "Regional Ops", value: "VN · SG · MY · ID · PH · TH" },
-  { icon: "◉", label: "Education", value: "Hoa Sen University — GPA 3.35/4.0" },
-  { icon: "⬡", label: "Data Analytics", value: "Swiss Coding Academy" },
-  { icon: "▸", label: "Career Track", value: "EY Senior → Finance Supervisor" },
+  {
+    icon: "★",
+    label: "EY Idol 2022",
+    value: "Top 3",
+    desc: "Recognized in an internal talent and engagement competition during my EY journey.",
+  },
+  {
+    icon: "◎",
+    label: "EY Performance",
+    value: "4.5 / 5",
+    desc: "Performance rating reflecting strong ownership, execution, and professional growth.",
+  },
+  {
+    icon: "◈",
+    label: "Regional Scope",
+    value: "VN · SG · MY · ID · PH · TH",
+    desc: "Experience supporting finance operations across multiple Southeast Asian markets.",
+  },
+  {
+    icon: "◆",
+    label: "Military Service",
+    value: "Military-region unit",
+    desc: "Built discipline, structure, responsibility, and execution under pressure.",
+  },
+  {
+    icon: "◉",
+    label: "Education",
+    value: "Hoa Sen University",
+    desc: "Accounting & Auditing — GPA 3.35 / 4.0.",
+  },
+  {
+    icon: "⬡",
+    label: "Data Analytics",
+    value: "Swiss Coding Academy",
+    desc: "Data Analytics track focused on analytical thinking and practical data workflows.",
+  },
 ];
 </script>
 
@@ -43,8 +72,12 @@ const highlights = [
     <NotchSection class="projects-notch-end" />
     <div class="grid">
       <div class="projects-title">
-        <Banner class="projects-title-banner" :copy="t('selected')" size="sm" animated />
+        <span class="projects-title-label">Selected Systems &amp; Case Studies</span>
         <h2 class="projects-title-copy">{{ t("projects") }}</h2>
+        <p class="projects-title-intro">
+          A collection of finance systems, review workflows, and analytics prototypes designed to
+          improve control, visibility, and operational scalability.
+        </p>
       </div>
     </div>
     <div class="grid">
@@ -57,6 +90,10 @@ const highlights = [
     <div class="grid">
       <div class="projects-highlights">
         <h3 class="projects-highlights-title">Career Highlights</h3>
+        <p class="projects-highlights-intro">
+          Selected milestones that reflect a mix of finance foundation, execution discipline, and
+          continuous learning.
+        </p>
         <div class="projects-highlights-grid">
           <div
             class="projects-highlight-card"
@@ -67,6 +104,7 @@ const highlights = [
             <div class="projects-highlight-card-body">
               <p class="projects-highlight-card-label">{{ h.label }}</p>
               <p class="projects-highlight-card-value">{{ h.value }}</p>
+              <p class="projects-highlight-card-desc">{{ h.desc }}</p>
             </div>
           </div>
         </div>
@@ -116,6 +154,26 @@ const highlights = [
 
       @include mixins.mq("sm") { font-size: var(--font-size-title-lg); }
       @include mixins.mq("xl") { font-size: var(--font-size-title-xl); }
+    }
+
+    &-label {
+      display: block;
+      font-family: "ProFontWindows", monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.45;
+      margin-bottom: var(--space-xs);
+    }
+
+    &-intro {
+      font-size: var(--font-size-md);
+      line-height: 1.6;
+      max-width: 620px;
+      opacity: 0.65;
+      margin-top: var(--space-md);
+
+      @include mixins.mq("md") { font-size: var(--font-size-lg); }
     }
 
     &-banner {
@@ -179,13 +237,20 @@ const highlights = [
 
     &-title {
       font-weight: 900;
-      font-size: var(--font-size-title-xs);
       letter-spacing: 0.04em;
-      margin-bottom: var(--space-lg);
+      margin-bottom: var(--space-sm);
       opacity: 0.5;
       text-transform: uppercase;
       font-size: 12px;
       font-family: "ProFontWindows", monospace;
+    }
+
+    &-intro {
+      font-size: var(--font-size-md);
+      line-height: 1.6;
+      max-width: 560px;
+      opacity: 0.6;
+      margin-bottom: var(--space-lg);
     }
 
     &-grid {
@@ -242,6 +307,13 @@ const highlights = [
       font-size: var(--font-size-md);
       font-weight: 600;
       line-height: 1.3;
+    }
+
+    &-desc {
+      font-size: var(--font-size-sm);
+      line-height: 1.5;
+      opacity: 0.55;
+      margin-top: 4px;
     }
   }
 }

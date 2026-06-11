@@ -8,7 +8,7 @@ export default {
   tags: ["python", "bigquery", "duckdb", "sql", "sheets", "powerbi"],
   videoBorder: false,
   description:
-    "Khám phá kiến trúc và prototype điều tra cách xây dựng cơ sở hạ tầng dữ liệu tài chính có thể mở rộng sử dụng ingestion theo lịch, BigQuery, mô hình dữ liệu có cấu trúc và các dashboard nội bộ nhẹ.<br/><br/>Đây là dự án học tập và prototype, không phải hệ thống sản xuất. Mục tiêu là hiểu cách các đội tài chính có thể chuyển từ Google Sheets thủ công sang kiến trúc dữ liệu có cấu trúc, có thể truy vấn và duy trì tốt hơn.<br/><br/><em>Dự án này được gắn nhãn rõ ràng là khám phá kiến trúc và prototype.</em>",
+    "A prototype analytical setup exploring scheduled finance data ingestion, centralized data layers, local exploration, and lightweight dashboarding.<br/><br/><strong>Focus areas:</strong> scheduled data ingestion, BigQuery analytical layer, DuckDB exploration, dashboard performance, and structured finance data models.<br/><br/><strong>Tools:</strong> BigQuery, DuckDB, Python, Google Sheets, Apps Script, Power BI.<br/><br/><em>Architecture is presented as a simplified prototype.</em>",
   components: [
     {
       type: "media",

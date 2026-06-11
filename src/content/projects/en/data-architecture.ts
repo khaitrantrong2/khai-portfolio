@@ -8,7 +8,7 @@ export default {
   tags: ["python", "bigquery", "duckdb", "sql", "sheets", "powerbi"],
   videoBorder: false,
   description:
-    "An architecture exploration and prototype investigating how to build scalable finance-data infrastructure using scheduled ingestion, BigQuery, structured data models, and lightweight internal dashboards.<br/><br/>This is a learning and prototyping project rather than a production system. The goal is to understand how finance teams could move beyond manual Google Sheets toward a more structured, queryable, and maintainable data architecture.<br/><br/>Topics explored include consolidating multiple Google Sheets, scheduled data ingestion via Python, BigQuery as a centralized analytical layer, dashboard performance improvements through data partitioning, efficient storage using Parquet and DuckDB, and connecting structured data to Power BI.<br/><br/><em>This project is clearly labeled as an architecture exploration and prototype.</em>",
+    "A prototype analytical setup exploring scheduled finance data ingestion, centralized data layers, local exploration, and lightweight dashboarding.<br/><br/><strong>Focus areas:</strong> scheduled data ingestion, BigQuery analytical layer, DuckDB exploration, dashboard performance, and structured finance data models.<br/><br/><strong>Tools:</strong> BigQuery, DuckDB, Python, Google Sheets, Apps Script, Power BI.<br/><br/><em>Architecture is presented as a simplified prototype.</em>",
   components: [
     {
       type: "media",

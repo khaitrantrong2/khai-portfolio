@@ -8,7 +8,7 @@ export default {
   tags: ["sheets", "appsscript", "powerquery", "finance"],
   videoBorder: false,
   description:
-    "Mô hình dữ liệu khu vực chuẩn hóa để hợp nhất hoạt động claimback trên nhiều quốc gia, nền tảng, thương hiệu và mô hình thương mại.<br/><br/>Phạm vi bao gồm Việt Nam, Singapore, Malaysia, Indonesia, Philippines và Thái Lan. Mỗi bản ghi theo dõi thương hiệu, quốc gia, nền tảng, loại yêu cầu, kỳ hoạt động, số tiền accrual, số tiền hóa đơn, bút toán nhật ký, reversal, credit note hoặc VRA, hoạt động net-off, ngày xử lý chính, trạng thái đặt chỗ và cờ đánh giá.<br/><br/><em>Hình ảnh dự án sử dụng dữ liệu được tái tạo hoặc ẩn danh để bảo vệ thông tin kinh doanh bảo mật.</em>",
+    "A standardized data model for consolidating claimback activity across countries, brands, platforms, activity periods, and accounting status.<br/><br/><strong>Focus areas:</strong> country-level consolidation, brand and platform mapping, activity-period tracking, booking status visibility, and review flag standardization.<br/><br/><strong>Tools:</strong> Google Sheets, Apps Script, Power Query, NetSuite data.<br/><br/><em>Displayed data is fictional and recreated.</em>",
   components: [
     {
       type: "media",

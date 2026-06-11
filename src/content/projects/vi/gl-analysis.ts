@@ -8,7 +8,7 @@ export default {
   tags: ["python", "duckdb", "sql", "excel", "netsuite"],
   videoBorder: false,
   description:
-    "Công cụ đánh giá kế toán dựa trên Python để phân tích dữ liệu sổ cái tổng hợp và làm nổi bật các giao dịch cần điều tra sâu hơn. Đây là hệ thống đang phát triển, không phải sản phẩm AI tự động hoàn toàn.<br/><br/>Công cụ áp dụng tập hợp quy tắc có thể cấu hình để đánh giá các bút toán kế toán và nêu ra các vấn đề tiềm ẩn như accrual và reversal không khớp, thiếu reversal, sai tài khoản, sai phân loại hoặc bộ phận, sai kỳ hoạt động và các bất thường bút toán nhật ký.<br/><br/><em>Hình ảnh dự án sử dụng dữ liệu được tái tạo hoặc ẩn danh để bảo vệ thông tin kinh doanh bảo mật.</em>",
+    "A rule-based review engine for analyzing general-ledger data and highlighting transactions that may require deeper accounting review.<br/><br/><strong>Focus areas:</strong> accrual and reversal mismatches, missing reversals, incorrect accounts, wrong classes or departments, period issues, and pass-through imbalance checks.<br/><br/><strong>Tools:</strong> Python, DuckDB, Pandas, Excel, NetSuite GL data.<br/><br/><em>Rules and visuals are simplified for portfolio presentation.</em>",
   components: [
     {
       type: "media",

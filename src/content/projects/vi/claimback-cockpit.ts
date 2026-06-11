@@ -8,7 +8,7 @@ export default {
   tags: ["sheets", "appsscript", "html", "javascript", "netsuite", "powerquery"],
   videoBorder: false,
   description:
-    "Hệ thống đánh giá tài chính được thiết kế để hợp nhất hoạt động claimback trên sáu quốc gia, tự động hóa kiểm tra kiểm soát, theo dõi trạng thái xử lý và giúp người đánh giá xác định các vấn đề tài chính tiềm ẩn.<br/><br/>Các đánh giá claimback trước đây bị phân tán, rất thủ công và phụ thuộc vào kiến thức cá nhân — tạo ra rủi ro về accrual còn thiếu, reversal không đúng, sai tài khoản, hóa đơn bị trễ và theo dõi thanh toán chưa đầy đủ. Cockpit này cung cấp một góc nhìn tổng hợp, có cấu trúc cho cả người chuẩn bị và người đánh giá.<br/><br/><em>Hình ảnh dự án sử dụng dữ liệu được tái tạo hoặc ẩn danh để bảo vệ thông tin kinh doanh bảo mật.</em>",
+    "A review cockpit for tracking accruals, reversals, invoices, settlement status, operational progress, and control exceptions across multiple countries.<br/><br/><strong>Focus areas:</strong> claimback consolidation, accrual and reversal tracking, invoice and settlement monitoring, exception flags, and reviewer-friendly status visibility.<br/><br/><strong>Tools:</strong> Google Sheets, Apps Script, NetSuite data, Power Query.<br/><br/><em>Visuals use recreated and anonymized data.</em>",
   components: [
     {
       type: "media",

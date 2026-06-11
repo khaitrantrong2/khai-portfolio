@@ -15,20 +15,17 @@ onMounted(() => {
 onUnmounted(() => {
   transitions.contact.destroy();
 });
-
-const openToRoles = [
-  "Finance Transformation",
-  "Finance Automation",
-  "Regional Finance Operations",
-  "FP&A / Finance Analytics",
-  "Accounting Controls & GL Review",
-];
 </script>
 
 <template>
   <div class="contact grid" ref="contactElement">
     <div class="contact-content">
       <h2 class="contact-title" v-html="t('lets-work-together')"></h2>
+
+      <p class="contact-lead">
+        If you'd like to connect or exchange ideas on finance transformation, controls, and
+        automation, feel free to reach out.
+      </p>
 
       <div class="contact-info">
         <div class="contact-info-row">
@@ -40,17 +37,6 @@ const openToRoles = [
         <div class="contact-info-row">
           <span class="contact-info-label">Location</span>
           <span class="contact-info-value">Vietnam</span>
-        </div>
-      </div>
-
-      <div class="contact-open-to">
-        <p class="contact-open-to-label">Open to</p>
-        <div class="contact-open-to-chips">
-          <span
-            v-for="role in openToRoles"
-            :key="role"
-            class="contact-chip"
-          >{{ role }}</span>
         </div>
       </div>
 
@@ -98,6 +84,15 @@ const openToRoles = [
     @include mixins.mq("xl") { font-size: var(--font-size-title-xl); }
   }
 
+  &-lead {
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+    max-width: 440px;
+    opacity: 0.7;
+
+    @include mixins.mq("md") { font-size: var(--font-size-lg); }
+  }
+
   &-info {
     display: flex;
     flex-direction: column;
@@ -132,39 +127,6 @@ const openToRoles = [
 
       &:hover { opacity: 1; }
     }
-  }
-
-  &-open-to {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-
-    &-label {
-      font-family: "ProFontWindows", monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      opacity: 0.45;
-    }
-  }
-
-  &-open-to-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-xs);
-  }
-
-  &-chip {
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-    padding: 5px 12px;
-    border-radius: 100px;
-    border: 1px solid currentColor;
-    opacity: 0.65;
-    white-space: nowrap;
-    transition: opacity 0.2s;
-
-    &:hover { opacity: 1; }
   }
 }
 </style>

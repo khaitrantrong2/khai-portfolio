@@ -8,7 +8,7 @@ export default {
   tags: ["powerbi", "sheets", "powerquery", "netsuite", "finance"],
   videoBorder: false,
   description:
-    "A finance dashboard for monitoring outstanding receivables, processing timelines, disputes, settlement status, and long-lasting balances.<br/><br/>The dashboard converts operational transaction records from NetSuite into actionable working-capital analytics, enabling proactive management of the AR portfolio rather than reactive month-end scrambles.<br/><br/>Key analytics include journal-entry to invoice cycle, invoice to net-off cycle, outstanding-age analysis, 60-day and 90-day flags, brand and country drilldowns, dispute-reason tracking, and collection and settlement visibility.<br/><br/><em>Project visuals use recreated or anonymized data to protect confidential business information.</em>",
+    "A dashboard concept for monitoring receivable aging, invoice-to-settlement cycles, dispute status, and long-lasting balances.<br/><br/><strong>Focus areas:</strong> outstanding receivables, aging review, invoice-to-net-off cycle, dispute visibility, and working-capital monitoring.<br/><br/><strong>Tools:</strong> Power BI, Power Query, Google Sheets, NetSuite data.<br/><br/><em>Figures and visuals are anonymized mock data.</em>",
   components: [
     {
       type: "media",

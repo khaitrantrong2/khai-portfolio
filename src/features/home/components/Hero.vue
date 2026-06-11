@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import Banner from "../../../components/Banner.vue";
 import { preloaderVisible } from "../../../composables/usePreloader";
-import { t } from "../../../i18n/utils/translate";
 </script>
 
 <template>
@@ -9,17 +7,17 @@ import { t } from "../../../i18n/utils/translate";
     <div class="hero-content grid">
       <div class="hero-content-inner" id="hero-content-inner">
         <div class="hero-content-copys">
+          <span class="hero-eyebrow" v-if="!preloaderVisible">Finance Transformation, Controls &amp; Automation</span>
           <h1 class="hero-title">Khai Tran</h1>
-          <p class="hero-subtitle" v-if="!preloaderVisible">Finance Transformation &amp; Automation</p>
+          <p class="hero-role" v-if="!preloaderVisible">Finance Supervisor — Value Protection, Claimback &amp; AR</p>
           <p class="hero-statement" v-if="!preloaderVisible">
-            I turn complex finance operations into<br class="hero-br" /> scalable, automated, and review-friendly systems.
+            I build structured finance systems that improve control, visibility, and scalability.
           </p>
-          <div class="hero-badges" v-if="!preloaderVisible">
-            <span class="hero-badge">Former EY Senior</span>
-            <span class="hero-badge">Regional Finance Operations</span>
-            <span class="hero-badge hero-badge--tech">Python · Power BI · NetSuite</span>
+          <div class="hero-chips" v-if="!preloaderVisible">
+            <span class="hero-chip">Former EY Senior</span>
+            <span class="hero-chip">Regional Finance Operations</span>
+            <span class="hero-chip hero-chip--tech">Python • Power BI • NetSuite</span>
           </div>
-          <Banner class="hero-banner" :copy="t('job-title')" v-if="!preloaderVisible" animated />
         </div>
       </div>
     </div>
@@ -38,24 +36,23 @@ import { t } from "../../../i18n/utils/translate";
   &-content {
     align-items: center;
     justify-content: center;
-    height: 50%;
+    height: 52%;
 
     @include mixins.landscape {
       height: 100%;
 
       @include mixins.mq("md") {
-        padding-bottom: 28%;
+        padding-bottom: 26%;
       }
 
       @include mixins.mq("lg") {
-        padding-bottom: 5%;
+        padding-bottom: 4%;
       }
     }
 
     &-inner {
       transform-origin: center center;
       grid-column: 1 / 13;
-      gap: var(--space-xl);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -68,7 +65,7 @@ import { t } from "../../../i18n/utils/translate";
       @include mixins.landscape {
         left: 0;
         transform: translateX(0);
-        grid-column: 2 / 8;
+        grid-column: 2 / 9;
         align-items: flex-start;
         width: fit-content;
       }
@@ -77,19 +74,29 @@ import { t } from "../../../i18n/utils/translate";
     &-copys {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: var(--space-sm);
 
-      @include mixins.mq("md") {
-        gap: var(--space-md);
+      @include mixins.landscape {
+        align-items: flex-start;
       }
     }
   }
 
+  &-eyebrow {
+    font-family: "ProFontWindows", monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-cyan-400, rgba(77, 217, 192, 0.85));
+    margin-bottom: 2px;
+  }
+
   &-title {
     font-weight: 900;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
+    line-height: 0.95;
     font-size: var(--font-size-title-lg);
-    line-height: 1.0;
 
     @include mixins.landscape {
       font-size: var(--font-size-title-lg);
@@ -106,77 +113,58 @@ import { t } from "../../../i18n/utils/translate";
     }
   }
 
-  &-subtitle {
+  &-role {
     font-weight: 700;
-    font-size: var(--font-size-title-xxs);
-    letter-spacing: 0.04em;
-    color: var(--color-cyan-400, #4dd9c0);
-    text-transform: uppercase;
-    margin-top: -4px;
+    font-size: var(--font-size-md);
+    text-align: center;
+    opacity: 0.85;
 
-    @include mixins.mq("md") {
-      font-size: var(--font-size-title-xs);
+    @include mixins.landscape {
+      text-align: left;
+      font-size: var(--font-size-lg);
     }
   }
 
   &-statement {
     font-size: var(--font-size-md);
     line-height: 1.55;
-    max-width: 420px;
-    opacity: 0.75;
+    max-width: 440px;
+    text-align: center;
+    opacity: 0.6;
+    margin-top: 2px;
 
-    @include mixins.mq("md") {
-      font-size: var(--font-size-lg);
+    @include mixins.landscape {
+      text-align: left;
     }
   }
 
-  &-br {
-    display: none;
-    @include mixins.mq("md") {
-      display: inline;
-    }
-  }
-
-  &-badges {
+  &-chips {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: var(--space-xs);
-    margin-top: var(--space-xs);
+    margin-top: var(--space-sm);
+
+    @include mixins.landscape {
+      justify-content: flex-start;
+    }
   }
 
-  &-badge {
+  &-chip {
     font-family: "ProFontWindows", monospace;
     font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 4px;
-    border: 1px solid currentColor;
-    color: var(--color-text-cyan-400, rgba(77,217,192,0.7));
-    background: rgba(77, 217, 192, 0.07);
+    padding: 5px 12px;
+    border-radius: var(--radius-sm, 6px);
+    border: 1px solid var(--color-cyan-400, rgba(77, 217, 192, 0.5));
+    color: var(--color-text-cyan-400, rgba(77, 217, 192, 0.85));
+    background: rgba(77, 217, 192, 0.06);
     white-space: nowrap;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
 
     &--tech {
-      color: var(--color-white-400, rgba(255,255,255,0.5));
-      border-color: var(--color-white-400, rgba(255,255,255,0.3));
-      background: rgba(255,255,255,0.04);
-    }
-  }
-
-  &-banner {
-    position: absolute;
-    bottom: 0;
-    right: -16px;
-    z-index: 10;
-    transform: rotate(-5deg) translate(0, 65%);
-
-    @include mixins.mq("sm") {
-      right: -24px;
-      transform: rotate(-5deg) translate(0, 70%);
-    }
-
-    @include mixins.mq("lg") {
-      right: -32px;
-      transform: rotate(-5deg) translate(0, 80%);
+      color: rgba(255, 255, 255, 0.6);
+      border-color: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.04);
     }
   }
 }

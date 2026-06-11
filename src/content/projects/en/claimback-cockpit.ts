@@ -8,7 +8,7 @@ export default {
   tags: ["sheets", "appsscript", "html", "javascript", "netsuite", "powerquery"],
   videoBorder: false,
   description:
-    "A finance review system designed to consolidate claimback operations across six countries, automate control checks, monitor processing status, and help reviewers identify potential financial issues.<br/><br/>Claimback reviews were previously fragmented, highly manual, and dependent on individual knowledge — creating risks around missing accruals, incorrect reversals, wrong accounts, delayed invoicing, and incomplete settlement tracking. This cockpit provides a structured, single-source view for both preparers and reviewers.<br/><br/>Key capabilities include cross-country consolidation, accrual and reversal status tracking, missing-document flags, delayed-processing alerts, accounting-alignment checks, and management-level visibility dashboards.<br/><br/><em>Project visuals use recreated or anonymized data to protect confidential business information.</em>",
+    "A review cockpit for tracking accruals, reversals, invoices, settlement status, operational progress, and control exceptions across multiple countries.<br/><br/><strong>Focus areas:</strong> claimback consolidation, accrual and reversal tracking, invoice and settlement monitoring, exception flags, and reviewer-friendly status visibility.<br/><br/><strong>Tools:</strong> Google Sheets, Apps Script, NetSuite data, Power Query.<br/><br/><em>Visuals use recreated and anonymized data.</em>",
   components: [
     {
       type: "media",

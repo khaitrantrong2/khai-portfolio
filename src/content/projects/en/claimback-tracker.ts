@@ -8,7 +8,7 @@ export default {
   tags: ["sheets", "appsscript", "powerquery", "finance"],
   videoBorder: false,
   description:
-    "A standardized regional data model for consolidating claimback activity across multiple countries, platforms, brands, and commercial models.<br/><br/>Coverage spans Vietnam, Singapore, Malaysia, Indonesia, the Philippines, and Thailand. Each record tracks brand, country, platform, claim type, activity period, accrual amount, invoice amount, journal entry, reversal, credit note or VRA, net-off activity, key processing dates, booking status, and review flags.<br/><br/>The tracker provides a single source of truth for the regional claimback portfolio and enables consistent analysis across different operating models and platform structures.<br/><br/><em>Project visuals use recreated or anonymized data to protect confidential business information.</em>",
+    "A standardized data model for consolidating claimback activity across countries, brands, platforms, activity periods, and accounting status.<br/><br/><strong>Focus areas:</strong> country-level consolidation, brand and platform mapping, activity-period tracking, booking status visibility, and review flag standardization.<br/><br/><strong>Tools:</strong> Google Sheets, Apps Script, Power Query, NetSuite data.<br/><br/><em>Displayed data is fictional and recreated.</em>",
   components: [
     {
       type: "media",

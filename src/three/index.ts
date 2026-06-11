@@ -1,34 +1,35 @@
-import { camera } from "./core/camera";
-import { renderer } from "./core/renderer";
-import { objects } from "./objects";
-import { renderTarget } from "./core/renderTarget";
-import { threeSizes } from "./utils/sizes";
-import { resources } from "../utils/resources";
-import { raycast } from "./utils/raycast";
+import { avatar } from "./avatar";
+import { avatarHologram } from "./avatar/hologram";
+import { contact } from "./contact";
+import { darkPlane } from "./dark-plane";
+import { gridFloor } from "./grid-floor";
+import { lab } from "./lab";
+import { room } from "./room";
+import { sleepingSprite } from "./contact/sleeping-sprite";
+import { renderer } from "../core/renderer";
 
-let canvas: HTMLCanvasElement | null = null;
+const init = () => {
+  avatarHologram.init();
+  avatar.init();
+  contact.init();
+  darkPlane.init();
+  gridFloor.init();
+  lab.init();
+  room.init();
+  sleepingSprite.init();
 
-const init = (_canvas: HTMLCanvasElement) => {
-  canvas = _canvas;
-
-  resources.once("ready", () => {
-    threeSizes.init(_canvas);
-    camera.init();
-    renderTarget.init();
-    renderer.init(canvas);
-
-    objects.init();
-    raycast.init();
-  });
+  renderer.compile();
 };
 
 const destroy = () => {
-  threeSizes.destroy();
-  renderTarget.destroy();
-  renderer.destroy();
-  objects.destroy();
-  camera.destroy();
-  canvas = null;
+  avatarHologram.destroy();
+  avatar.destroy();
+  contact.destroy();
+  darkPlane.destroy();
+  gridFloor.destroy();
+  lab.destroy();
+  room.destroy();
+  sleepingSprite.destroy();
 };
 
-export const three = { init, destroy };
+export const objects = { init, destroy };
