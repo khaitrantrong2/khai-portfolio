@@ -1,4 +1,3 @@
-// This file is now the Vietnamese locale previews (renamed for minimal code change)
 import thumbnailClaimbackCockpit from "../../../assets/thumbnails/claimback-cockpit.svg";
 import thumbnailGlAnalysis from "../../../assets/thumbnails/gl-analysis.svg";
 import thumbnailClaimbackTracker from "../../../assets/thumbnails/claimback-tracker.svg";

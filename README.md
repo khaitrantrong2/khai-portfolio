@@ -39,8 +39,8 @@ Attribution is preserved as required. See **Credits & Attribution** below.
 ## Local Installation
 
 ```bash
-git clone https://github.com/khaitrantrong2/khai-portfolio-cute.git
-cd khai-portfolio-cute
+git clone https://github.com/khaitrantrong2/khai-portfolio.git
+cd khai-portfolio
 npm install
 cp .env.example .env
 npm run dev
