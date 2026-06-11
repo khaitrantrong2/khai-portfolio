@@ -1,35 +1,24 @@
-import { avatar } from "./avatar";
-import { avatarHologram } from "./avatar/hologram";
-import { contact } from "./contact";
-import { darkPlane } from "./dark-plane";
-import { gridFloor } from "./grid-floor";
-import { lab } from "./lab";
-import { room } from "./room";
-import { sleepingSprite } from "./contact/sleeping-sprite";
-import { renderer } from "../core/renderer";
+import { camera } from "./core/camera";
+import { renderer } from "./core/renderer";
+import { objects } from "./objects/index";
+import { raycast } from "./utils/raycast";
+import { threeSizes } from "./utils/sizes";
 
-const init = () => {
-  avatarHologram.init();
-  avatar.init();
-  contact.init();
-  darkPlane.init();
-  gridFloor.init();
-  lab.init();
-  room.init();
-  sleepingSprite.init();
-
-  renderer.compile();
+const init = (canvas: HTMLCanvasElement) => {
+  threeSizes.init(canvas);
+  threeSizes.resize();
+  renderer.init(canvas);
+  camera.init();
+  objects.init();
+  raycast.init();
 };
 
 const destroy = () => {
-  avatarHologram.destroy();
-  avatar.destroy();
-  contact.destroy();
-  darkPlane.destroy();
-  gridFloor.destroy();
-  lab.destroy();
-  room.destroy();
-  sleepingSprite.destroy();
+  raycast.destroy();
+  objects.destroy();
+  camera.destroy();
+  renderer.destroy();
+  threeSizes.destroy();
 };
 
-export const objects = { init, destroy };
+export const three = { init, destroy };
